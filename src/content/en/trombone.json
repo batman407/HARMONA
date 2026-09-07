@@ -1,0 +1,83 @@
+{
+  "id": "trombone",
+  "name": "Trombone",
+  "family": "brass",
+  "familyName": "Slide Brass Aerophone",
+  "shortDescription": "Tenor brass instrument using a telescoping slide to continuously vary air-column length and pitch.",
+  "description": "The trombone is unique among brass instruments in using a telescoping slide rather than valves for pitch control. Moving the slide through seven positions changes the total tube length (2.75m to 3.5m), shifting the harmonic series downward by semitone steps. The player's embouchure (lip tension) selects which partial of the harmonic series sounds, enabling a full chromatic range.",
+  "historicalOrigins": "Developed in the 15th century as the 'sackbut', the trombone is one of the oldest continuously-used brass instruments. Its slide mechanism appeared before valves were invented for other brass instruments.",
+  "acousticPrinciples": [
+    "Lip reed: buzzing lips at the mouthpiece excite the air column at the player-selected harmonic partial",
+    "Slide positions change total tube length, shifting the entire harmonic series: each position = one semitone lower",
+    "Bell flare acts as acoustic impedance transformer matching narrow bore to wide atmospheric radiation",
+    "The trombone can produce a true glissando by sliding continuously between positions"
+  ],
+  "characteristics": {
+    "pitchRange": "Bb1 (58 Hz) to F5 (698 Hz)",
+    "dynamicRange": "40 dB to 110 dB (ppp to fff)",
+    "timbralColor": "Rich, dark, weighty; bright in upper register; buzzy fortissimo",
+    "orchestralRole": "Bass/tenor harmony, chorale doubling, powerful accent, glissando effects"
+  },
+  "soundDNA": {
+    "exciter": "Vibrating lip reed in cupped mouthpiece (Helmholtz oscillator)",
+    "resonator": "Cylindrical slide bore + conical bell section air column",
+    "harmonics": "Complete harmonic series; fundamental (pedal tone) through 6th partial",
+    "attackDecay": "Controlled by air velocity and tongue articulation; sustained indefinitely when blown",
+    "timbreProfile": "Rich dark fundamental, strong lower partials, brass formant peak 900–1200 Hz",
+    "radiationPattern": "Directional forward radiation from bell opening; back pressure felt by player",
+    "fundamentalRange": "58 Hz – 698 Hz",
+    "harmonicWarmth": 85,
+    "percussiveness": 30,
+    "sustainScore": 95,
+    "brightness": 65
+  },
+  "parts": {
+    "mouthpiece": {
+      "label": "Mouthpiece",
+      "function": "Deep-cup mouthpiece positions lips optimally for buzzing. Cup depth shapes timbral brightness.",
+      "characteristics": { "material": "Silver-plated brass, 6.5AL cup size", "mechanism": "Lip reed cavity coupling to bore resonance", "role": "Lip reed interface and initial resonator" },
+      "explodeVector": [-0.7, 0, 0]
+    },
+    "slide_outer": {
+      "label": "Outer Slide",
+      "function": "Outer stocking slides over inner tubes. Moving to 7 positions extends total tube length in semitone steps.",
+      "characteristics": { "material": "Nickel-silver outer slide with chrome-plated inner", "mechanism": "Telescoping tube extension: Δposition = Δpitch by semitone", "role": "Continuous pitch control via length variation" },
+      "explodeVector": [0, -0.4, 0]
+    },
+    "slide_inner": {
+      "label": "Inner Slide",
+      "function": "Precision-ground inner slide tubes with beaded stockings guiding smooth frictionless motion.",
+      "characteristics": { "material": "Chrome-plated brass inner slide with seamless drawn tubing", "mechanism": "Sub-millimetre clearance for air-tight sliding motion", "role": "Smooth telescoping air column" },
+      "explodeVector": [0, -0.35, 0]
+    },
+    "bell_section": {
+      "label": "Bell Flare",
+      "function": "Conical bell flare acts as acoustic impedance transformer improving radiation efficiency.",
+      "characteristics": { "material": "Yellow or rose brass, hand-hammered bell (8\" diameter)", "mechanism": "Flare profile tunes radiation efficiency and brightness", "role": "Acoustic radiation and tonal colour" },
+      "explodeVector": [0.6, 0.2, 0]
+    },
+    "tuning_slide": {
+      "label": "Tuning Slide",
+      "function": "U-shaped slide in the bell section for overall tuning adjustment (A=440 Hz standard).",
+      "characteristics": { "material": "Yellow brass with thumb trigger option", "mechanism": "Additive tube length for overall A=440 calibration", "role": "Master pitch calibration" },
+      "explodeVector": [0.3, 0.5, 0]
+    }
+  },
+  "followTheSound": [
+    { "step": 1, "partKey": "mouthpiece", "title": "Lip Reed Vibration", "explanation": "Player's buzzing lips act as a Helmholtz oscillator, exciting harmonics at the cup resonance frequency." },
+    { "step": 2, "partKey": "slide_outer", "title": "Slide Position", "explanation": "Slide position changes total tube length. Position 1=Bb, Position 7=E — seven semitone steps." },
+    { "step": 3, "partKey": "slide_inner", "title": "Air Column Resonance", "explanation": "The full tube length (2.75–3.5m) determines which harmonic series the embouchure selects from." },
+    { "step": 4, "partKey": "bell_section", "title": "Bell Radiation", "explanation": "Bell flare opens from ~13mm bore to 220mm diameter, dramatically improving radiation into the room." }
+  ],
+  "interactiveControls": {
+    "type": "brass_valves",
+    "keysOrTriggers": [
+      { "id": "bb2", "label": "Bb2 (Pos 1)", "note": "Bb2", "freq": 116.54 },
+      { "id": "f3", "label": "F3 (Pos 1)", "note": "F3", "freq": 174.61 },
+      { "id": "bb3", "label": "Bb3 (Pos 1)", "note": "Bb3", "freq": 233.08 },
+      { "id": "d4", "label": "D4 (Pos 1)", "note": "D4", "freq": 293.66 },
+      { "id": "f4", "label": "F4 (Pos 1)", "note": "F4", "freq": 349.23 }
+    ]
+  },
+  "tags": ["brass", "slide", "orchestral", "jazz", "glissando", "sustain"]
+}

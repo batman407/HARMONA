@@ -1,0 +1,101 @@
+{
+  "id": "violin",
+  "name": "Violin",
+  "family": "strings",
+  "familyName": "Bowed Chordophone",
+  "shortDescription": "Four-string bowed instrument producing continuous tone through rosin-coated horsehair bow friction.",
+  "description": "The violin produces sound through stick-slip friction between the rosined bow hair and strings. The Helmholtz corner — a kink in the string's sawtooth wave — travels back and forth at the fundamental frequency. The bridge acts as a mechanical lever coupling this energy to the asymmetric top plate, creating complex radiation modes via the f-holes and the bass bar inside.",
+  "historicalOrigins": "Emerged in 16th-century northern Italy (Cremona), perfected by luthiers Amati, Stradivari, and Guarneri del Gesù. The Stradivarius (1700–1725) remains the acoustic benchmark.",
+  "acousticPrinciples": [
+    "Helmholtz stick-slip motion: bow hair alternately grips and slips string at fundamental frequency",
+    "Sawtooth wave from string contains all harmonic overtones (f, 2f, 3f...)",
+    "Bridge acts as mechanical filter and lever between string and top plate",
+    "F-holes provide air resonance coupling and tonal radiation"
+  ],
+  "characteristics": {
+    "pitchRange": "G3 (196 Hz) to E7 (2637 Hz)",
+    "dynamicRange": "25 dB to 85 dB (pp to ff)",
+    "timbralColor": "Bright, singing, complex, capable of extreme dynamic nuance",
+    "orchestralRole": "Lead melodic voice, vibrato expressiveness, ensemble unison, solo virtuosity"
+  },
+  "soundDNA": {
+    "exciter": "Rosined horsehair bow creating stick-slip Helmholtz friction on steel/gut string",
+    "resonator": "Spruce top plate, maple back/sides, internal bass bar, sound post",
+    "harmonics": "Rich sawtooth harmonic series; bowing pressure controls spectral brightness",
+    "attackDecay": "Continuous sustained tone (no decay while bowed); attack speed controlled by bow velocity",
+    "timbreProfile": "Singing, bright, complex; vibrato adds pitch modulation for warmth",
+    "radiationPattern": "Dipole from top/back plates with directional high-frequency radiation",
+    "fundamentalRange": "196 Hz – 2637 Hz",
+    "harmonicWarmth": 80,
+    "percussiveness": 10,
+    "sustainScore": 98,
+    "brightness": 78
+  },
+  "parts": {
+    "body": {
+      "label": "Resonant Body",
+      "function": "Hollow wooden body amplifies string vibration through complex plate and cavity resonances.",
+      "characteristics": { "material": "Sitka Spruce top; European Maple back and sides", "mechanism": "Dipole plate radiator with internal Helmholtz cavity", "role": "Primary acoustic amplifier and radiator" },
+      "explodeVector": [0, 0, 0]
+    },
+    "top_plate": {
+      "label": "Spruce Top Plate",
+      "function": "Primary radiation surface driven by bridge. Internal bass bar stiffens the treble side.",
+      "characteristics": { "material": "Quarter-sawn Sitka or European Spruce with bass bar", "mechanism": "Flexural plate vibration (monopole/dipole modes)", "role": "Main acoustic radiator" },
+      "explodeVector": [0, 0, 0.5]
+    },
+    "f_holes": {
+      "label": "F-Holes",
+      "function": "Symmetrical apertures releasing internal air resonance and tonal radiation.",
+      "characteristics": { "material": "Spruce plate cutout", "mechanism": "Helmholtz port resonance; air mass outlet", "role": "Low-frequency air resonance port" },
+      "explodeVector": [0, 0.1, 0.55]
+    },
+    "bridge": {
+      "label": "Maple Bridge",
+      "function": "Precision-carved bridge mechanically couples string vibration to the top plate.",
+      "characteristics": { "material": "Bosnian Maple with carved internal cutouts", "mechanism": "Mechanical lever and impedance transformer", "role": "Vibrational energy coupler" },
+      "explodeVector": [0, -0.05, 0.5]
+    },
+    "strings": {
+      "label": "Violin Strings",
+      "function": "Four tuned strings (G-D-A-E) vibrating in Helmholtz stick-slip motion under bow.",
+      "characteristics": { "material": "Steel core E, synthetic/gut G-D-A strings", "mechanism": "Stick-slip friction creating sawtooth waveform", "role": "Primary oscillator with continuous excitation" },
+      "explodeVector": [0, 0.05, 0.6]
+    },
+    "fingerboard": {
+      "label": "Ebony Fingerboard",
+      "function": "Unfretted ebony surface allowing continuous pitch glissando and vibrato.",
+      "characteristics": { "material": "African Ebony (no frets)", "mechanism": "Continuous pitch variation by finger pressure position", "role": "Continuous pitch control surface" },
+      "explodeVector": [0, 0.5, 0.15]
+    },
+    "chinrest": {
+      "label": "Chinrest & Tailpiece",
+      "function": "Stabilises violin against chin; tailpiece anchors strings and fine-tuners.",
+      "characteristics": { "material": "Boxwood chinrest, ebony tailpiece", "mechanism": "String tension anchor with fine-tuner adjusters", "role": "String termination and player support" },
+      "explodeVector": [0, -0.3, 0.3]
+    },
+    "scroll": {
+      "label": "Scroll & Pegbox",
+      "function": "Ornamental scroll houses four friction pegs for coarse tuning.",
+      "characteristics": { "material": "Maple with ebony friction pegs", "mechanism": "Friction peg tuning; hand-pressure against pegbox walls", "role": "Tension adjustment and aesthetic tradition" },
+      "explodeVector": [0, 1.1, 0]
+    }
+  },
+  "followTheSound": [
+    { "step": 1, "partKey": "strings", "title": "Stick-Slip Helmholtz Motion", "explanation": "Rosined bow hair grips and releases string at fundamental frequency, creating sawtooth wave." },
+    { "step": 2, "partKey": "bridge", "title": "Mechanical Coupling", "explanation": "Bridge transfers string energy with filtering — curved feet rock on the top plate." },
+    { "step": 3, "partKey": "top_plate", "title": "Plate Vibration", "explanation": "Top plate vibrates in complex eigenmodes driven by bass bar and sound post." },
+    { "step": 4, "partKey": "f_holes", "title": "Air Radiation", "explanation": "F-holes release Helmholtz resonance, boosting bass frequencies into the room." },
+    { "step": 5, "partKey": "body", "title": "Full-Body Radiation", "explanation": "Back plate and air cavity radiate the full tonal spectrum outward." }
+  ],
+  "interactiveControls": {
+    "type": "string_pluck",
+    "keysOrTriggers": [
+      { "id": "g3", "label": "G3 (4th)", "note": "G3", "freq": 196.00 },
+      { "id": "d4", "label": "D4 (3rd)", "note": "D4", "freq": 293.66 },
+      { "id": "a4", "label": "A4 (2nd)", "note": "A4", "freq": 440.00 },
+      { "id": "e5", "label": "E5 (1st)", "note": "E5", "freq": 659.25 }
+    ]
+  },
+  "tags": ["bowed", "strings", "orchestral", "classical", "vibrato", "sustain"]
+}

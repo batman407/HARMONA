@@ -1,0 +1,84 @@
+{
+  "id": "alto_saxophone",
+  "name": "Alto Saxophone",
+  "family": "woodwinds",
+  "familyName": "Reed Aerophone",
+  "shortDescription": "Conical-bore metal woodwind using a single cane reed and key system to produce a warm, expressive tone.",
+  "description": "Despite being made of metal, the saxophone is acoustically a woodwind because it uses a single cane reed. The conical bore is crucial: it supports the full harmonic series (including the fundamental), unlike the clarinet's cylindrical bore which suppresses even harmonics. Tone holes with padded keys along the body change the effective air column length, selecting pitch across a chromatic range of 2.5 octaves.",
+  "historicalOrigins": "Invented by Adolphe Sax and patented in Paris in 1846. Originally designed for military bands, the saxophone became iconic in jazz, classical, and contemporary music.",
+  "acousticPrinciples": [
+    "Single reed acts as pressure-controlled valve: vibrates at resonant frequency set by bore + key length",
+    "Conical bore supports complete harmonic series including fundamental — overblows at octave",
+    "Tone hole closure changes effective tube length, selecting discrete pitches",
+    "Octave key opens a small vent hole forcing the instrument to jump to the second register (octave above)"
+  ],
+  "characteristics": {
+    "pitchRange": "Db3 (138 Hz) to Ab5 (831 Hz) written; concert Eb3–Bb5",
+    "dynamicRange": "40 dB to 110 dB",
+    "timbralColor": "Warm, reedy, expressive; bright in upper register; dark and full in lower",
+    "orchestralRole": "Jazz lead voice, pop melodist, chamber woodwind quartet"
+  },
+  "soundDNA": {
+    "exciter": "Vibrating cane reed against metal mouthpiece table — single-reed oscillator",
+    "resonator": "Conical metal bore with opened/closed tone holes defining active air column length",
+    "harmonics": "Full harmonic series: fundamental strong; odd and even harmonics present",
+    "attackDecay": "Controllable attack via tongue articulation; sustained while blown",
+    "timbreProfile": "Warm reedy fundamental, formant peaks at 900 Hz and 2500 Hz",
+    "radiationPattern": "Primarily from open tone holes and bell; omnidirectional at low frequencies",
+    "fundamentalRange": "138 Hz – 831 Hz",
+    "harmonicWarmth": 82,
+    "percussiveness": 25,
+    "sustainScore": 93,
+    "brightness": 70
+  },
+  "parts": {
+    "mouthpiece": {
+      "label": "Mouthpiece & Reed",
+      "function": "Hard rubber or metal mouthpiece with ligature holding cane reed. Reed vibrates against table.",
+      "characteristics": { "material": "Hard rubber (ebonite) mouthpiece; Arundo donax cane reed", "mechanism": "Bernoulli effect: reed tip vibrates at bore resonance", "role": "Primary sound-generating reed oscillator" },
+      "explodeVector": [0, 0.9, 0]
+    },
+    "neck": {
+      "label": "Neck (Crook)",
+      "function": "Curved metal neck connecting mouthpiece to body. Octave key mechanism located here.",
+      "characteristics": { "material": "Brass neck with lacquer or silver plate, octave key vent", "mechanism": "Octave vent forces octave register jump", "role": "Register control and mouthpiece connection" },
+      "explodeVector": [0, 0.6, 0.2]
+    },
+    "body": {
+      "label": "Conical Body",
+      "function": "Main conical brass tube from narrow neck to wide bell with 23+ tone holes and padded key cups.",
+      "characteristics": { "material": "Brass tube (yellow or phosphor bronze) lacquered or plated", "mechanism": "Conical bore: linear taper doubles cross-section per octave", "role": "Air column resonator and pitch selection" },
+      "explodeVector": [0, 0, 0]
+    },
+    "key_clusters": {
+      "label": "Key Mechanism",
+      "function": "Over 20 padded key cups on rods and pillars. Opening/closing holes changes active tube length.",
+      "characteristics": { "material": "Nickel-silver key cups with leather or synthetic pads", "mechanism": "Pad seals/opens tone hole — changes effective L for pitch selection", "role": "Pitch control mechanism" },
+      "explodeVector": [0.4, 0, 0.3]
+    },
+    "bell": {
+      "label": "Bell",
+      "function": "Flared bell improves acoustic radiation. Low B and Bb keys on the bell adjust lowest pitches.",
+      "characteristics": { "material": "Brass bell with engraved or plain finish", "mechanism": "Flare improves radiation efficiency at low frequencies", "role": "Acoustic radiation port and low-note tuning" },
+      "explodeVector": [0, -0.5, 0]
+    }
+  },
+  "followTheSound": [
+    { "step": 1, "partKey": "mouthpiece", "title": "Reed Oscillation", "explanation": "Airstream causes cane reed to alternately open/close mouthpiece gap, creating pressure pulses." },
+    { "step": 2, "partKey": "neck", "title": "Initial Resonance", "explanation": "Conical neck focuses the reed signal into the main body; octave key opens a vent for upper register." },
+    { "step": 3, "partKey": "key_clusters", "title": "Tone Hole Pitch Control", "explanation": "Open tone holes truncate the effective air column length, raising pitch to the desired note." },
+    { "step": 4, "partKey": "bell", "title": "Bell Radiation", "explanation": "Flared bell efficiently radiates the full tonal spectrum from the open air column." }
+  ],
+  "interactiveControls": {
+    "type": "wind_keys",
+    "keysOrTriggers": [
+      { "id": "d3", "label": "D3 (low)", "note": "D3", "freq": 146.83 },
+      { "id": "g3", "label": "G3", "note": "G3", "freq": 196.00 },
+      { "id": "a4", "label": "A4", "note": "A4", "freq": 440.00 },
+      { "id": "c4", "label": "C4", "note": "C4", "freq": 261.63 },
+      { "id": "e4", "label": "E4", "note": "E4", "freq": 329.63 },
+      { "id": "g5", "label": "G5 (high)", "note": "G5", "freq": 783.99 }
+    ]
+  },
+  "tags": ["woodwind", "reed", "jazz", "saxophone", "expressive", "conical bore"]
+}

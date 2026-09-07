@@ -1,0 +1,170 @@
+{
+  "id": "piano",
+  "name": "Concert Grand Piano",
+  "family": "keyboards",
+  "familyName": "Chordophone / Keyboard",
+  "shortDescription": "88-key acoustic keyboard instrument featuring escapement hammers, high-tension cast iron plate, and tapered soundboard.",
+  "description": "The grand piano is one of the most mechanically complex acoustic machines in history. Striking a key propels a felted wooden hammer through an escapement mechanism into high-tension steel strings, transferring over 20 tons of frame tension into a crowned solid spruce soundboard.",
+  "historicalOrigins": "Invented by Bartolomeo Cristofori in Padua, Italy around 1700 as the 'gravicembalo col piano e forte' (harpsichord with soft and loud).",
+  "acousticPrinciples": [
+    "Impulse excitation: Felt hammer compression creates nonlinear attack profile",
+    "Dual-phase decay: Vertical and horizontal string polarization modes cause rapid initial decay followed by singing sustain",
+    "Inharmonicity: String stiffness slightly spreads upper partial frequencies (fn = n·f0·√(1 + B·n²))"
+  ],
+  "characteristics": {
+    "pitchRange": "A0 (27.5 Hz) to C8 (4186 Hz)",
+    "dynamicRange": "30 dB (pianissimo) to 105 dB (fortissimo)",
+    "timbralColor": "Expansive, crystalline, bell-like attack with warm resonant foundation",
+    "orchestralRole": "Solo concerto centerpiece, polyphonic harmonic foundation, chamber anchor"
+  },
+  "soundDNA": {
+    "exciter": "Felt-covered hardwood hammer launched via double-escapement repetition action",
+    "resonator": "Solid sitka spruce crowned soundboard glued to multi-laminate hardwood rim",
+    "harmonics": "Rich harmonic series with slight positive inharmonicity due to steel wire flexural stiffness",
+    "attackDecay": "Instant percussive strike (~2ms) with prolonged dual-slope decay up to 20 seconds",
+    "timbreProfile": "Massive dynamic range with thunderous bass and ringing crystalline treble",
+    "radiationPattern": "Upward acoustic projection reflecting off open angled lid toward concert audience",
+    "fundamentalRange": "27.5 Hz – 4,186 Hz",
+    "harmonicWarmth": 90,
+    "percussiveness": 80,
+    "sustainScore": 95,
+    "brightness": 85
+  },
+  "parts": {
+    "piano_case": {
+      "label": "Grand Rim & Case",
+      "function": "Structural perimeter rim curved under steam pressure; reflects acoustic energy back into soundboard.",
+      "characteristics": {
+        "material": "Multi-ply Hard Rock Maple and Beech with polyester lacquer",
+        "mechanism": "Acoustic boundary reflector",
+        "role": "Enclosure and energy boundary"
+      },
+      "explodeVector": [0, 0, 0]
+    },
+    "lid": {
+      "label": "Acoustic Reflection Lid",
+      "function": "Directs sound waves radiating from soundboard outward toward the audience.",
+      "characteristics": {
+        "material": "Solid spruce core with hardwood veneer and brass prop stick",
+        "mechanism": "Directional parabolic acoustic baffle",
+        "role": "Sound projection and directional focus"
+      },
+      "explodeVector": [0, 0.8, 0]
+    },
+    "soundboard": {
+      "label": "Crowned Soundboard & Ribs",
+      "function": "Translates string vibrations into sound pressure; crowned with upward arch to resist downward string bearing.",
+      "characteristics": {
+        "material": "Quarter-sawn close-grained European or Sitka spruce",
+        "mechanism": "Massive flexural diaphragm radiator",
+        "role": "Primary acoustic transducer"
+      },
+      "explodeVector": [0, -0.4, 0]
+    },
+    "iron_plate": {
+      "label": "Cast Iron Harpsichord/Harp Plate",
+      "function": "Withstands 18–22 metric tons of string tension without distorting the wooden cabinet.",
+      "characteristics": {
+        "material": "Grey iron sand casting finished in antique gold lacquer",
+        "mechanism": "High-compressive load-bearing truss frame",
+        "role": "Structural tension anchor"
+      },
+      "explodeVector": [0, 0.4, 0]
+    },
+    "strings": {
+      "label": "High-Tension Piano Strings",
+      "function": "Oscillating steel wire (plain treble wires in unisons of 3; copper-wound bass strings).",
+      "characteristics": {
+        "material": "High-tensile Röslau steel wire wound with pure copper",
+        "mechanism": "Coupled unison harmonic oscillation",
+        "role": "Tensioned oscillator"
+      },
+      "explodeVector": [0, 0.25, 0]
+    },
+    "hammers": {
+      "label": "Escapement Action & Hammers",
+      "function": "Propels wool-felt hammerheads toward strings and instantly escapes to avoid damping vibration.",
+      "characteristics": {
+        "material": "Hornbeam shanks with dense compressed virgin wool felt",
+        "mechanism": "Double-escapement whippen lever mechanism",
+        "role": "Percussive excitation impulse generator"
+      },
+      "explodeVector": [0, 0.15, 0.5]
+    },
+    "keys_white": {
+      "label": "Diatonic Natural Keys",
+      "function": "Front-line user control levers transferring finger force into the repetition whippen.",
+      "characteristics": {
+        "material": "Quarter-sawn Bavarian spruce topped with synthetic ivory (Ivorite)",
+        "mechanism": "Balanced first-class lever with lead counterweights",
+        "role": "Performance touch interface"
+      },
+      "explodeVector": [0, 0, 0.8]
+    },
+    "keys_black": {
+      "label": "Accidental Sharp/Flat Keys",
+      "function": "Elevated chromatic keys providing full 12-tone equal temperament access.",
+      "characteristics": {
+        "material": "Dense African Gabon Ebony or matte composite",
+        "mechanism": "Balanced lever pivot",
+        "role": "Chromatic touch interface"
+      },
+      "explodeVector": [0, 0.05, 0.82]
+    },
+    "pedals": {
+      "label": "Lyre Pedals (Sustain, Sostenuto, Una Corda)",
+      "function": "Lifts dampers off strings (sustain), catches selected notes, or shifts keyframe sideways (soft pedal).",
+      "characteristics": {
+        "material": "Solid cast brass pedals with hardwood trapwork levers",
+        "mechanism": "Mechanical push-rod damper release",
+        "role": "Sympathetic resonance and acoustic timbre modulation"
+      },
+      "explodeVector": [0, -0.9, 0.4]
+    }
+  },
+  "followTheSound": [
+    {
+      "step": 1,
+      "partKey": "keys_white",
+      "title": "Key Depression",
+      "explanation": "Pianist strikes a key, tilting the lever and lifting the damper off the vibrating string."
+    },
+    {
+      "step": 2,
+      "partKey": "hammers",
+      "title": "Hammer Strike & Escapement",
+      "explanation": "The jack launches the hammer toward the string; escapement trips just 2mm before contact, allowing natural rebound."
+    },
+    {
+      "step": 3,
+      "partKey": "strings",
+      "title": "Unison String Oscillation",
+      "explanation": "Hammer impact initiates transverse waves across three unison strings, exchanging energy through the bridge."
+    },
+    {
+      "step": 4,
+      "partKey": "soundboard",
+      "title": "Soundboard Driving",
+      "explanation": "Vibrations transfer through hardwood bridges into the crowned spruce soundboard, projecting deep dynamic volume."
+    },
+    {
+      "step": 5,
+      "partKey": "lid",
+      "title": "Acoustic Radiation & Projection",
+      "explanation": "Soundboard waves radiate upward, bounce off the propped wooden lid, and fill the auditorium with immersive stereo depth."
+    }
+  ],
+  "interactiveControls": {
+    "type": "piano_keys",
+    "keysOrTriggers": [
+      { "id": "c4", "label": "C4 (Middle C)", "note": "C4", "freq": 261.63 },
+      { "id": "d4", "label": "D4", "note": "D4", "freq": 293.66 },
+      { "id": "e4", "label": "E4", "note": "E4", "freq": 329.63 },
+      { "id": "f4", "label": "F4", "note": "F4", "freq": 349.23 },
+      { "id": "g4", "label": "G4", "note": "G4", "freq": 392.00 },
+      { "id": "a4", "label": "A4 (Concert Pitch)", "note": "A4", "freq": 440.00 },
+      { "id": "b4", "label": "B4", "note": "B4", "freq": 493.88 },
+      { "id": "c5", "label": "C5", "note": "C5", "freq": 523.25 }
+    ]
+  }
+}

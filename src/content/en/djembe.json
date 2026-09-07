@@ -1,0 +1,75 @@
+{
+  "id": "djembe",
+  "name": "Djembe",
+  "family": "percussion",
+  "familyName": "Goblet Drum",
+  "shortDescription": "West African goblet drum with rope-tensioned goatskin membrane producing bass, tone, and slap timbres.",
+  "description": "The djembe is a goblet-shaped drum carved from a single hardwood log and covered with a shaved goatskin membrane tensioned by vertical ropes and metal rings. Three distinct timbres emerge depending on where and how the hand strikes the head: the bass (centre strike, flat hand) produces a low fundamental; the tone (edge strike, fingers together) produces a clear mid-frequency; the slap (edge strike, cupped fingers released) produces a sharp high-frequency crack.",
+  "historicalOrigins": "Originated with the Mandé people of West Africa (modern Mali/Guinea), used in ceremony and communication. Djembe means 'everyone gather together in peace' in the Bambara language.",
+  "acousticPrinciples": [
+    "Circular membrane: strike position determines which Bessel mode is excited (J₀ = bass; J₁ = tone)",
+    "Goblet shell acts as Helmholtz resonator boosting bass fundamental through the open bottom port",
+    "Goatskin membrane tension determines fundamental pitch; higher tension = higher pitch",
+    "Bass tones open the shell resonance port; slaps close it momentarily to produce the crack"
+  ],
+  "characteristics": {
+    "pitchRange": "Bass: 60–120 Hz; Tone: 200–400 Hz; Slap: 500 Hz – 3 kHz",
+    "dynamicRange": "60 dB to 115 dB",
+    "timbralColor": "Rich bass, clear tone, crisp slap — all from the same instrument",
+    "orchestralRole": "Ensemble rhythm leader (Sangban/Dunun pairing), ceremonial, solo"
+  },
+  "soundDNA": {
+    "exciter": "Hand striking goatskin membrane — flat, cupped finger, or slap technique",
+    "resonator": "Carved hardwood goblet shell with open bottom port",
+    "harmonics": "Bessel inharmonic modes; bass centre strike dominant fundamental",
+    "attackDecay": "Very fast attack (< 2ms), decay 200ms (slap) to 1s (bass)",
+    "timbreProfile": "Warm deep bass, clear cutting tone, explosive slap crack",
+    "radiationPattern": "Top radiation from membrane; bass port radiates downward/omnidirectional",
+    "fundamentalRange": "60 Hz – 3000 Hz (technique-dependent)",
+    "harmonicWarmth": 70,
+    "percussiveness": 95,
+    "sustainScore": 18,
+    "brightness": 80
+  },
+  "parts": {
+    "membrane": {
+      "label": "Goatskin Membrane (Batter Head)",
+      "function": "Shaved goatskin membrane vibrating in Bessel mode patterns when struck.",
+      "characteristics": { "material": "Shaved goatskin, 10–12\" diameter", "mechanism": "Circular membrane Bessel mode vibration J₀/J₁", "role": "Primary sound-producing membrane" },
+      "explodeVector": [0, 0.7, 0]
+    },
+    "shell": {
+      "label": "Carved Hardwood Shell",
+      "function": "Goblet-shaped shell couples membrane vibration to internal air column and open port.",
+      "characteristics": { "material": "Carved lenké, iroko, or plantation mahogany", "mechanism": "Helmholtz resonator with open bottom port", "role": "Acoustic resonator and tonal chamber" },
+      "explodeVector": [0, 0, 0]
+    },
+    "tension_ropes": {
+      "label": "Tension Rope System",
+      "function": "Vertical ropes threaded between top and bottom rings adjust membrane tension and pitch.",
+      "characteristics": { "material": "Braided nylon or polyester rope, galvanised iron rings", "mechanism": "Rope tension increases membrane T (raises pitch)", "role": "Tuning and membrane tension system" },
+      "explodeVector": [0.6, 0, 0]
+    },
+    "crown_ring": {
+      "label": "Crown Ring",
+      "function": "Upper iron ring holding membrane skin folded over the drum top.",
+      "characteristics": { "material": "Galvanised iron ring, 10–12\" diameter", "mechanism": "Clamps skin via folded-over method", "role": "Membrane attachment point" },
+      "explodeVector": [0, 0.9, 0]
+    }
+  },
+  "followTheSound": [
+    { "step": 1, "partKey": "membrane", "title": "Hand Strike", "explanation": "Hand technique determines Bessel mode: centre (J₀ bass), edge (J₁ tone), slap (J₁ + noise)." },
+    { "step": 2, "partKey": "tension_ropes", "title": "Membrane Tension", "explanation": "Rope tension controls membrane T; tighter ropes raise pitch across all timbres." },
+    { "step": 3, "partKey": "shell", "title": "Goblet Resonance", "explanation": "Shell Helmholtz resonator boosts bass fundamental and colours tone through shell reflection." },
+    { "step": 4, "partKey": "crown_ring", "title": "Air Port Radiation", "explanation": "Open bottom port radiates bass downward; total sound projects from both membrane and port." }
+  ],
+  "interactiveControls": {
+    "type": "drum_strike",
+    "keysOrTriggers": [
+      { "id": "bass", "label": "Bass (centre)", "note": "G1", "freq": 98.00 },
+      { "id": "tone", "label": "Tone (edge)", "note": "D3", "freq": 293.66 },
+      { "id": "slap", "label": "Slap (cupped)", "note": "A4", "freq": 440.00 }
+    ]
+  },
+  "tags": ["percussion", "african", "hand drum", "membrane", "djembe", "world", "rhythm"]
+}

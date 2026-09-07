@@ -1,0 +1,102 @@
+{
+  "id": "electric_guitar",
+  "name": "Electric Guitar",
+  "family": "strings",
+  "familyName": "Solid-Body Chordophone",
+  "shortDescription": "Solid-body guitar converting string vibration into electromagnetic signal via magnetic pickups.",
+  "description": "The electric guitar replaces acoustic resonance with electromagnetic induction. Magnetised pickups sense string vibration as fluctuating magnetic flux, inducing a voltage that feeds an amplifier. The solid mahogany body contributes sustain through mass; tone controls shape the harmonic content before amplification.",
+  "historicalOrigins": "Developed in the 1930s–1950s by Leo Fender and Les Paul to overcome feedback problems in big-band settings. The Fender Telecaster (1950) and Gibson Les Paul (1952) defined the archetype.",
+  "acousticPrinciples": [
+    "Faraday's law of induction: changing flux in pickup coil induces EMF proportional to rate of change",
+    "String vibration near a magnet creates oscillating magnetic field variations sensed by the coil",
+    "Tone/volume potentiometers act as RC low-pass filters shaping harmonic content",
+    "Solid body sustains longer — no Helmholtz cavity losses"
+  ],
+  "characteristics": {
+    "pitchRange": "E2 (82.4 Hz) to E6 (1318 Hz)",
+    "dynamicRange": "35 dB (guitar) + amp-dependent",
+    "timbralColor": "Bright, cutting, harmonically dense; distortion adds upper partials",
+    "orchestralRole": "Lead melodic voice, power chords, sustain layers"
+  },
+  "soundDNA": {
+    "exciter": "Plectrum or finger plucking magnetised steel string",
+    "resonator": "Magnetic pickup coil + solid mahogany body mass",
+    "harmonics": "Strong high-order partials; distortion saturates even harmonics",
+    "attackDecay": "Fast attack (~2ms pickup response), long sustain with solid body",
+    "timbreProfile": "Cutting midrange presence, harmonically rich",
+    "radiationPattern": "Amplifier-dependent; speaker cone radiation",
+    "fundamentalRange": "82 Hz – 1318 Hz",
+    "harmonicWarmth": 60,
+    "percussiveness": 70,
+    "sustainScore": 82,
+    "brightness": 90
+  },
+  "parts": {
+    "body": {
+      "label": "Solid Body",
+      "function": "Provides string anchor and sustain mass. Wood density determines resonance character.",
+      "characteristics": { "material": "Honduran Mahogany with Maple cap", "mechanism": "Mass resonator", "role": "Sustain reservoir and tonal colouration" },
+      "explodeVector": [0, 0, 0]
+    },
+    "pickups": {
+      "label": "Humbucking Pickups",
+      "function": "Electromagnetic transducers sensing string vibration via Faraday induction.",
+      "characteristics": { "material": "Alnico V magnets, 42 AWG copper coil windings", "mechanism": "Dual-coil humbucking cancels 60Hz AC hum", "role": "Primary acoustic-to-electrical transducer" },
+      "explodeVector": [0, 0.25, 0.5]
+    },
+    "bridge": {
+      "label": "Tune-O-Matic Bridge",
+      "function": "Anchors strings and allows individual intonation adjustment per string.",
+      "characteristics": { "material": "Zamak alloy with chrome plating", "mechanism": "Adjustable saddle screw for intonation", "role": "String termination" },
+      "explodeVector": [0, -0.15, 0.55]
+    },
+    "neck": {
+      "label": "Neck & Headstock",
+      "function": "Supports strings over the fretboard. Headstock holds machine heads for tuning.",
+      "characteristics": { "material": "Mahogany neck with truss rod", "mechanism": "Rigid beam under string tension", "role": "Structural backbone" },
+      "explodeVector": [0, 0.7, 0]
+    },
+    "fretboard": {
+      "label": "Rosewood Fretboard",
+      "function": "22 frets dividing string length into precise semitone intervals.",
+      "characteristics": { "material": "Indian Rosewood with nickel-silver frets", "mechanism": "Equal-temperament fret spacing", "role": "Pitch quantization surface" },
+      "explodeVector": [0, 0.7, 0.2]
+    },
+    "strings": {
+      "label": "Electric Strings",
+      "function": "Ferromagnetic strings vibrate within pickup magnetic field to generate varying flux.",
+      "characteristics": { "material": "Nickel-plated steel wound over hexagonal steel core", "mechanism": "Transverse standing waves in ferromagnetic medium", "role": "Primary oscillator and signal source" },
+      "explodeVector": [0, 0, 0.7]
+    },
+    "knobs": {
+      "label": "Volume & Tone Controls",
+      "function": "Potentiometers forming RC filters that roll off high frequencies and adjust level.",
+      "characteristics": { "material": "500kΩ audio-taper potentiometers", "mechanism": "RC low-pass filter", "role": "Tonal EQ and output level" },
+      "explodeVector": [0.5, -0.3, 0.35]
+    },
+    "output_jack": {
+      "label": "Output Jack",
+      "function": "1/4\" mono TS jack connecting guitar signal to amplifier.",
+      "characteristics": { "material": "Nickel-plated brass jack", "mechanism": "Electrical contact completing audio circuit", "role": "Signal output interface" },
+      "explodeVector": [0.8, -0.5, 0]
+    }
+  },
+  "followTheSound": [
+    { "step": 1, "partKey": "strings", "title": "String Vibration", "explanation": "Plucked ferromagnetic string vibrates near the pickup's magnetic field." },
+    { "step": 2, "partKey": "pickups", "title": "Electromagnetic Induction", "explanation": "Oscillating string modulates magnetic flux, inducing AC voltage (Faraday's law)." },
+    { "step": 3, "partKey": "knobs", "title": "Tone Shaping", "explanation": "RC filter network attenuates unwanted high-frequency content." },
+    { "step": 4, "partKey": "output_jack", "title": "Amplifier Interface", "explanation": "Signal exits via 1/4\" jack to guitar amplifier for power amplification." }
+  ],
+  "interactiveControls": {
+    "type": "string_pluck",
+    "keysOrTriggers": [
+      { "id": "e2", "label": "E2 (6th)", "note": "E2", "freq": 82.41 },
+      { "id": "a2", "label": "A2 (5th)", "note": "A2", "freq": 110.00 },
+      { "id": "d3", "label": "D3 (4th)", "note": "D3", "freq": 146.83 },
+      { "id": "g3", "label": "G3 (3rd)", "note": "G3", "freq": 196.00 },
+      { "id": "b3", "label": "B3 (2nd)", "note": "B3", "freq": 246.94 },
+      { "id": "e4", "label": "E4 (1st)", "note": "E4", "freq": 329.63 }
+    ]
+  },
+  "tags": ["plucked", "electric", "rock", "blues", "distortion"]
+}

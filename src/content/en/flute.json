@@ -1,0 +1,78 @@
+{
+  "id": "flute",
+  "name": "Concert Flute",
+  "family": "woodwinds",
+  "familyName": "Edge-Tone Aerophone",
+  "shortDescription": "Silver transverse flute producing pure, clear tones via an air jet striking the embouchure hole edge.",
+  "description": "The flute is a transverse (side-blown) aerophone producing sound through an edge tone: the player directs a focused air jet across the embouchure hole's sharp inner edge, creating alternating vortices above and below the aperture. This oscillation excites the air column to resonate at pitches determined by the open key holes. Unlike reed instruments, the flute has no vibrating solid, making its tone closest to a pure sine wave in the lower register.",
+  "historicalOrigins": "Flutes are among the oldest musical instruments (bone flutes from 43,000 BCE). The modern Boehm system flute was developed by Theobald Boehm in Munich in 1847.",
+  "acousticPrinciples": [
+    "Edge tone: air jet strikes lip plate edge creating alternating vortex shedding above/below",
+    "Vortex frequency locks to tube resonance frequency — the jet oscillates synchronously with the air column",
+    "Open cylindrical bore: overblows at the octave (2nd harmonic); supports even and odd partials",
+    "Key hole closure truncates effective tube length; all-keys-closed = lowest pitch (B3/C4)"
+  ],
+  "characteristics": {
+    "pitchRange": "C4 (261.6 Hz) to C7 (2093 Hz); some extend to B3",
+    "dynamicRange": "45 dB to 100 dB (pp to ff)",
+    "timbralColor": "Pure, airy, clear in low register; bright and penetrating in high register",
+    "orchestralRole": "Soprano melodic voice, orchestral colour, solo virtuosity, piccolo-range"
+  },
+  "soundDNA": {
+    "exciter": "Focused air jet across embouchure hole sharp edge — aeroacoustic edge tone",
+    "resonator": "Open cylindrical silver bore with tone holes",
+    "harmonics": "Near-sinusoidal in low register; 2nd and 3rd harmonics grow with register",
+    "attackDecay": "Soft attack controlled by air jet angle; sustained while blown",
+    "timbreProfile": "Pure clear fundamental low register; brighter and richer in upper registers",
+    "radiationPattern": "Primarily from open tone holes closest to the embouchure; directional at high frequencies",
+    "fundamentalRange": "261 Hz – 2093 Hz",
+    "harmonicWarmth": 55,
+    "percussiveness": 15,
+    "sustainScore": 92,
+    "brightness": 80
+  },
+  "parts": {
+    "headjoint": {
+      "label": "Headjoint & Embouchure",
+      "function": "Head joint contains embouchure hole where player focuses the air jet to create the edge tone.",
+      "characteristics": { "material": "Silver, gold, or platinum tube with lip plate and riser", "mechanism": "Air jet vortex across sharp inner edge of embouchure hole", "role": "Primary tone generation via edge-tone oscillation" },
+      "explodeVector": [0, 0.8, 0]
+    },
+    "body": {
+      "label": "Main Body",
+      "function": "Cylindrical bore housing the majority of tone holes and key mechanisms.",
+      "characteristics": { "material": "Silver-plated nickel-silver or solid silver tube", "mechanism": "Open cylindrical bore resonator — overblows at octave", "role": "Air column resonator and pitch selection" },
+      "explodeVector": [0, 0, 0]
+    },
+    "keywork": {
+      "label": "Boehm Key System",
+      "function": "15+ padded key cups on rods covering tone holes. Plateau or open-hole variants available.",
+      "characteristics": { "material": "Silver-plated nickel-silver keys with cork or synthetic pads", "mechanism": "Pad closure seals tone hole changing effective tube length", "role": "Chromatic pitch control mechanism" },
+      "explodeVector": [0.35, 0, 0.25]
+    },
+    "footjoint": {
+      "label": "Footjoint",
+      "function": "Detachable foot extends range to C4 (C-foot) or B3 (B-foot).",
+      "characteristics": { "material": "Silver-plated nickel-silver with C or B rollers", "mechanism": "Two or three additional key mechanisms for lowest notes", "role": "Extended low register control" },
+      "explodeVector": [0, -0.7, 0]
+    }
+  },
+  "followTheSound": [
+    { "step": 1, "partKey": "headjoint", "title": "Edge-Tone Excitation", "explanation": "Air jet oscillates across the embouchure hole edge at the tube's resonant frequency." },
+    { "step": 2, "partKey": "keywork", "title": "Pitch Selection", "explanation": "Open/closed key pads determine the effective tube length (L) and therefore the resonant pitch." },
+    { "step": 3, "partKey": "body", "title": "Cylindrical Resonance", "explanation": "Cylindrical bore resonates at half-wavelengths. Overblowing opens the second harmonic (octave)." },
+    { "step": 4, "partKey": "footjoint", "title": "Low Register Extension", "explanation": "Footjoint keys extend the air column, enabling the lowest notes of the instrument." }
+  ],
+  "interactiveControls": {
+    "type": "wind_keys",
+    "keysOrTriggers": [
+      { "id": "c4", "label": "C4 (low)", "note": "C4", "freq": 261.63 },
+      { "id": "e4", "label": "E4", "note": "E4", "freq": 329.63 },
+      { "id": "g4", "label": "G4", "note": "G4", "freq": 392.00 },
+      { "id": "a4", "label": "A4", "note": "A4", "freq": 440.00 },
+      { "id": "c5", "label": "C5", "note": "C5", "freq": 523.25 },
+      { "id": "g5", "label": "G5 (high)", "note": "G5", "freq": 783.99 }
+    ]
+  },
+  "tags": ["woodwind", "flute", "orchestral", "airy", "pure", "edge-tone"]
+}

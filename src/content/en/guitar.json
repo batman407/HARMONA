@@ -1,0 +1,158 @@
+{
+  "id": "guitar",
+  "name": "Acoustic Concert Guitar",
+  "family": "strings",
+  "familyName": "Chordophone",
+  "shortDescription": "Six-stringed plucked chordophone with hollow resonant chamber and internal bracing.",
+  "description": "The classical acoustic guitar produces sound through the transverse vibration of coupled tensioned strings, which transmit vibrational kinetic energy through the bridge and soundboard into the internal Helmholtz air cavity.",
+  "historicalOrigins": "Evolved from the Renaissance vihuela and Baroque guitar into the modern Spanish fan-braced guitar designed by Antonio de Torres in the 1850s.",
+  "acousticPrinciples": [
+    "Transverse string standing waves defined by Mersenne's laws: f = (1/2L)√(T/μ)",
+    "Bridge serves as acoustic transducer coupling strings to the top soundboard",
+    "Soundboard functions as a dipole radiator while soundhole provides Helmholtz cavity resonance around 100 Hz"
+  ],
+  "characteristics": {
+    "pitchRange": "E2 (82.4 Hz) to B5 (987.8 Hz)",
+    "dynamicRange": "40 dB to 85 dB",
+    "timbralColor": "Warm, woody, articulate, rich in lower-mid harmonics",
+    "orchestralRole": "Harmonic foundation, soloist voice, rhythmic comping"
+  },
+  "soundDNA": {
+    "exciter": "Finger pluck or plectrum displacing tensioned steel/nylon string",
+    "resonator": "Solid Sitka spruce soundboard with rosewood back, sides, and Helmholtz air cavity",
+    "harmonics": "Integer harmonic series (f, 2f, 3f...) with rapid decay in high frequencies",
+    "attackDecay": "Sharp attack (~5ms) followed by exponential decay with 2–5s sustain",
+    "timbreProfile": "Warm woody fundamental with delicate shimmering upper partials",
+    "radiationPattern": "Directional forward radiation from soundboard with omnidirectional low-end from soundhole",
+    "fundamentalRange": "82 Hz – 988 Hz",
+    "harmonicWarmth": 85,
+    "percussiveness": 65,
+    "sustainScore": 60,
+    "brightness": 70
+  },
+  "parts": {
+    "body": {
+      "label": "Resonant Soundbox",
+      "function": "Amplifies low and midrange frequencies through resonant wood plates and enclosed air volume.",
+      "characteristics": {
+        "material": "Solid Sitka Spruce top, East Indian Rosewood back & sides",
+        "mechanism": "Flexural plate vibration and Helmholtz air resonance",
+        "role": "Primary acoustic radiator"
+      },
+      "explodeVector": [0, 0, 0]
+    },
+    "soundboard": {
+      "label": "Soundboard (Top Plate)",
+      "function": "Vibrates in complex eigenmodes to convert string energy into airborne sound pressure waves.",
+      "characteristics": {
+        "material": "Quarter-sawn Spruce with fan bracing",
+        "mechanism": "Dipole acoustic radiator",
+        "role": "Energy transducer and radiation surface"
+      },
+      "explodeVector": [0, 0, 0.45]
+    },
+    "neck": {
+      "label": "Neck & Headstock",
+      "function": "Supports string tension of 60–80 kg and provides structural alignment.",
+      "characteristics": {
+        "material": "Honduran Mahogany with dual-action truss rod",
+        "mechanism": "Rigid cantilever beam under compression",
+        "role": "Structural tension backbone"
+      },
+      "explodeVector": [0, 0.6, 0]
+    },
+    "fretboard": {
+      "label": "Fretboard & Frets",
+      "function": "Divides string lengths into tempered semitones by setting vibrating boundary conditions.",
+      "characteristics": {
+        "material": "African Ebony with nickel-silver frets",
+        "mechanism": "Physical node boundary termination",
+        "role": "Pitch quantization"
+      },
+      "explodeVector": [0, 0.6, 0.2]
+    },
+    "strings": {
+      "label": "Tensioned Strings",
+      "function": "Primary oscillators that establish standing wave frequencies when plucked.",
+      "characteristics": {
+        "material": "Phosphor bronze wound over high-carbon steel core",
+        "mechanism": "Transverse standing wave oscillation",
+        "role": "Primary exciter oscillator"
+      },
+      "explodeVector": [0, 0, 0.7]
+    },
+    "bridge": {
+      "label": "Bridge & Saddle",
+      "function": "Transmits mechanical rocking motion from strings to soundboard with impedance matching.",
+      "characteristics": {
+        "material": "Dense Ebony bridge with bone saddle",
+        "mechanism": "Mechanical rocking lever and impedance transformer",
+        "role": "Mechanical energy coupler"
+      },
+      "explodeVector": [0, -0.2, 0.55]
+    },
+    "tuning_pegs": {
+      "label": "Tuning Machine Heads",
+      "function": "Adjusts string tension (T) to calibrate fundamental frequency via worm gear mechanisms.",
+      "characteristics": {
+        "material": "Die-cast brass gears with pearloid buttons",
+        "mechanism": "Worm drive gear ratio (18:1)",
+        "role": "Tension regulation"
+      },
+      "explodeVector": [0, 1.2, 0]
+    },
+    "soundhole": {
+      "label": "Soundhole & Rosette",
+      "function": "Vent for internal acoustic air piston; tunes Helmholtz resonant peak around A2/G2.",
+      "characteristics": {
+        "material": "Circular aperture with wood mosaic inlay rosette",
+        "mechanism": "Helmholtz acoustic port",
+        "role": "Low-frequency radiation port"
+      },
+      "explodeVector": [0, 0.15, 0.5]
+    }
+  },
+  "followTheSound": [
+    {
+      "step": 1,
+      "partKey": "strings",
+      "title": "String Pluck (Oscillation)",
+      "explanation": "A player displaces the string, introducing potential energy. Releasing it creates counter-propagating transverse wave pulses."
+    },
+    {
+      "step": 2,
+      "partKey": "fretboard",
+      "title": "Boundary Termination",
+      "explanation": "The nut and fret pinch the string, fixing end nodes and defining the effective vibrating length L."
+    },
+    {
+      "step": 3,
+      "partKey": "bridge",
+      "title": "Acoustic Transduction",
+      "explanation": "String tension variations exert periodic downward and rocking forces upon the saddle and bridge."
+    },
+    {
+      "step": 4,
+      "partKey": "soundboard",
+      "title": "Soundboard Radiation",
+      "explanation": "The bridge drives the spruce soundboard into flexural eigenmodes, displacing large volumes of ambient air."
+    },
+    {
+      "step": 5,
+      "partKey": "body",
+      "title": "Internal Cavity & Soundhole",
+      "explanation": "Internal acoustic reflections reinforce the bass through the soundhole via Helmholtz resonance, emitting full-spectrum audio."
+    }
+  ],
+  "interactiveControls": {
+    "type": "string_pluck",
+    "keysOrTriggers": [
+      { "id": "e2", "label": "E2 (6th)", "note": "E2", "freq": 82.41 },
+      { "id": "a2", "label": "A2 (5th)", "note": "A2", "freq": 110.00 },
+      { "id": "d3", "label": "D3 (4th)", "note": "D3", "freq": 146.83 },
+      { "id": "g3", "label": "G3 (3rd)", "note": "G3", "freq": 196.00 },
+      { "id": "b3", "label": "B3 (2nd)", "note": "B3", "freq": 246.94 },
+      { "id": "e4", "label": "E4 (1st)", "note": "E4", "freq": 329.63 }
+    ]
+  }
+}

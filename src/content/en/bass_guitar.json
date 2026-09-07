@@ -1,0 +1,94 @@
+{
+  "id": "bass_guitar",
+  "name": "Bass Guitar",
+  "family": "strings",
+  "familyName": "Solid-Body Chordophone",
+  "shortDescription": "Four-string electric bass providing low-frequency harmonic foundation through magnetic pickup induction.",
+  "description": "The electric bass guitar occupies the low-frequency foundation of modern ensembles. With a longer scale length (~864mm) and heavier wound strings, it produces fundamentals from 41 Hz to 300 Hz. Split-coil or soapbar pickups transduce string vibration electromagnetically, while the solid body's mass contributes long sustain without acoustic resonance losses.",
+  "historicalOrigins": "Invented by Leo Fender in 1951 as the Precision Bass, replacing the upright double bass in touring bands. The long neck and fretted fingerboard allowed precise intonation without the physical demands of the upright.",
+  "acousticPrinciples": [
+    "Longer scale length (864mm vs 648mm) lowers fundamental frequency per Mersenne's law",
+    "Heavier wound strings (0.045–0.105\") increase linear mass density μ, lowering pitch",
+    "Split-coil pickup humbucks 60 Hz noise while sensing both halves of string per string pair",
+    "Solid alder or ash body provides mass for sustain without acoustic resonance losses"
+  ],
+  "characteristics": {
+    "pitchRange": "E1 (41.2 Hz) to G4 (392 Hz)",
+    "dynamicRange": "40 dB (instrument) + amp-dependent",
+    "timbralColor": "Thick, warm, punchy low-mid; fundamental-dominant",
+    "orchestralRole": "Harmonic foundation, rhythmic pulse, groove anchor"
+  },
+  "soundDNA": {
+    "exciter": "Finger pluck or pick on heavy nickel-wound steel strings",
+    "resonator": "Split-coil electromagnetic pickup + solid ash/alder body",
+    "harmonics": "Fundamental-dominant; sparse upper harmonics",
+    "attackDecay": "Medium-fast attack (5–10ms), sustained fundamental with slower decay",
+    "timbreProfile": "Thick, warm, punchy; finger style adds harmonic warmth",
+    "radiationPattern": "Amplifier-dependent; subwoofer-capable below 80 Hz",
+    "fundamentalRange": "41 Hz – 392 Hz",
+    "harmonicWarmth": 88,
+    "percussiveness": 60,
+    "sustainScore": 78,
+    "brightness": 35
+  },
+  "parts": {
+    "body": {
+      "label": "Solid Bass Body",
+      "function": "Alder body provides mass for sustain. Contoured for ergonomic player comfort.",
+      "characteristics": { "material": "Solid alder or ash with polyester finish", "mechanism": "Mass sustain with minimal acoustic resonance", "role": "Sustain anchor and ergonomic platform" },
+      "explodeVector": [0, 0, 0]
+    },
+    "pickup": {
+      "label": "Split-Coil Pickup",
+      "function": "Two-part humbucking pickup, each half sensing two strings. Cancels electromagnetic interference.",
+      "characteristics": { "material": "Alnico V magnets with fibre-bobbin copper coil", "mechanism": "Split-coil humbucking; magnetic flux induction", "role": "Primary electromagnetic transducer" },
+      "explodeVector": [0, 0.2, 0.45]
+    },
+    "bridge": {
+      "label": "Heavy Bass Bridge",
+      "function": "High-mass bridge transfers string energy to body and allows intonation per string.",
+      "characteristics": { "material": "Bent steel or cast zinc with chrome saddles", "mechanism": "High-mass resonant transfer; saddle intonation", "role": "String termination and intonation" },
+      "explodeVector": [0, -0.1, 0.5]
+    },
+    "neck": {
+      "label": "Long-Scale Neck",
+      "function": "34\" (864mm) scale neck lowers pitch range. Truss rod counters 80–100 kg string tension.",
+      "characteristics": { "material": "Maple neck with graphite reinforcement", "mechanism": "Long rigid beam; scale length controls pitch", "role": "Scale length and string tension support" },
+      "explodeVector": [0, 0.8, 0]
+    },
+    "fretboard": {
+      "label": "Maple Fretboard",
+      "function": "20 frets providing semitone pitch quantization across 34\" scale.",
+      "characteristics": { "material": "Maple or rosewood with stainless-steel frets", "mechanism": "Scale-length fret placement per equal temperament", "role": "Pitch quantization" },
+      "explodeVector": [0, 0.8, 0.18]
+    },
+    "strings": {
+      "label": "Heavy Wound Strings",
+      "function": "High-mass wound strings create low-frequency standing waves (41–392 Hz).",
+      "characteristics": { "material": "Nickel-wound round-core steel 0.045–0.105\"", "mechanism": "Transverse standing waves; high μ for low pitch", "role": "Low-frequency primary oscillator" },
+      "explodeVector": [0, 0, 0.7]
+    },
+    "tuners": {
+      "label": "Tuning Machines",
+      "function": "4 sealed-gear tuning machines with 20:1 gear ratio for stable low-tension tuning.",
+      "characteristics": { "material": "Sealed die-cast chrome tuning machines", "mechanism": "Worm gear ratio reduces slip", "role": "Tension regulation and tuning stability" },
+      "explodeVector": [0, 1.1, 0]
+    }
+  },
+  "followTheSound": [
+    { "step": 1, "partKey": "strings", "title": "Low-Frequency Vibration", "explanation": "Heavy wound string vibrates at 41–392 Hz, creating slow transverse waves." },
+    { "step": 2, "partKey": "pickup", "title": "Split-Coil Induction", "explanation": "Each split-coil half senses two strings, cancelling hum while preserving bass signal." },
+    { "step": 3, "partKey": "body", "title": "Body Mass Sustain", "explanation": "Solid body mass prevents energy loss, extending sustain without acoustic resonance." },
+    { "step": 4, "partKey": "bridge", "title": "String-Body Coupling", "explanation": "Bridge transfers remaining vibrational energy into the body for tonal colouration." }
+  ],
+  "interactiveControls": {
+    "type": "string_pluck",
+    "keysOrTriggers": [
+      { "id": "e1", "label": "E1 (4th)", "note": "E1", "freq": 41.20 },
+      { "id": "a1", "label": "A1 (3rd)", "note": "A1", "freq": 55.00 },
+      { "id": "d2", "label": "D2 (2nd)", "note": "D2", "freq": 73.42 },
+      { "id": "g2", "label": "G2 (1st)", "note": "G2", "freq": 98.00 }
+    ]
+  },
+  "tags": ["bass", "electric", "low frequency", "groove", "funk", "rock"]
+}

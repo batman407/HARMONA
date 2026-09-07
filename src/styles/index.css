@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Default Dark Tokens */
+    --bg: #070A0F;
+    --surface: #0C111B;
+    --surface2: #0F1726;
+    --border: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(242, 193, 78, 0.35);
+    --text: #EAF0FF;
+    --muted: rgba(234, 240, 255, 0.72);
+    --subtle: rgba(234, 240, 255, 0.45);
+
+    /* Gold Accent */
+    --accent: #F2C14E;
+    --accentHover: #FFD36A;
+    --accentActive: #D6A73D;
+    --accentSoft: rgba(242, 193, 78, 0.14);
+    --accentGlow: rgba(242, 193, 78, 0.28);
+    --accentBorder: rgba(242, 193, 78, 0.4);
+
+    /* Glass Panels */
+    --glass-bg: rgba(12, 17, 27, 0.78);
+    --glass-border: rgba(255, 255, 255, 0.09);
+    --glass-glow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+
+    /* Typography */
+    --font-heading: 'Fraunces', serif;
+    --font-body: 'Inter', 'Noto Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  html.light {
+    /* Light Tokens */
+    --bg: #F6F3EA;
+    --surface: #FFFFFF;
+    --surface2: #F3F0E6;
+    --border: rgba(11, 15, 20, 0.10);
+    --border-hover: rgba(214, 167, 61, 0.5);
+    --text: #0B0F14;
+    --muted: rgba(11, 15, 20, 0.72);
+    --subtle: rgba(11, 15, 20, 0.45);
+
+    /* Gold Accent */
+    --accent: #D6A73D;
+    --accentHover: #B88B27;
+    --accentActive: #946E18;
+    --accentSoft: rgba(214, 167, 61, 0.16);
+    --accentGlow: rgba(214, 167, 61, 0.22);
+    --accentBorder: rgba(214, 167, 61, 0.35);
+
+    /* Glass Panels */
+    --glass-bg: rgba(255, 255, 255, 0.82);
+    --glass-border: rgba(11, 15, 20, 0.08);
+    --glass-glow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, .font-heading {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Glassmorphic Components */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-glow);
+}
+
+.glass-panel-accent {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--accentBorder);
+  box-shadow: 0 0 20px var(--accentGlow), var(--glass-glow);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FFF1B8 0%, #F2C14E 50%, #D6A73D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-glow-hover:hover {
+  box-shadow: 0 0 16px var(--accentGlow);
+  border-color: var(--accentBorder);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Range input styling */
+input[type="range"] {
+  accent-color: var(--accent);
+}
+
+/* Microinteraction: button active press-in */
+button:active {
+  transform: scale(0.97);
+}
+
+/* Premium radial background gradient for 3D viewport */
+.bg-radial {
+  background: radial-gradient(ellipse at 50% 40%, var(--surface) 0%, var(--bg) 70%);
+}
+
+/* Scrollbar-none utility */
+.scrollbar-none {
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Floating glass cards transition */
+.glass-panel,
+.glass-panel-accent {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Skeleton loading pulse shimmer */
+@keyframes shimmer {
+  0% { background-position: -500px 0; }
+  100% { background-position: 500px 0; }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--surface) 25%,
+    var(--surface2) 50%,
+    var(--surface) 75%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+/* Tailwind-friendly font utilities */
+.font-heading {
+  font-family: var(--font-heading);
+}
+.font-sans {
+  font-family: var(--font-body);
+}
+
+/* Animate bounce short (for note badge) */
+@keyframes bounce-short {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+.animate-bounce-short {
+  animation: bounce-short 0.6s ease;
+}
+
+/* Focus ring for accessibility */
+button:focus-visible,
+select:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+

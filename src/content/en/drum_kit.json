@@ -1,0 +1,90 @@
+{
+  "id": "drum_kit",
+  "name": "Drum Kit",
+  "family": "percussion",
+  "familyName": "Membranophone / Idiophone Set",
+  "shortDescription": "Multi-component percussion set combining struck membranes and metallic cymbals for rhythmic timekeeping.",
+  "description": "The drum kit is a multi-component percussion system combining membranophones (drums) and idiophones (cymbals). Each component produces a distinct timbral profile: the kick drum delivers subwoofer-range fundamentals through a large membrane; the snare produces a sharp crack via snare wires against the bottom head; toms provide mid-frequency accents; cymbals create broad-spectrum inharmonic noise bursts and sustained shimmer.",
+  "historicalOrigins": "The modern drum kit emerged in early 20th-century New Orleans jazz, where a single player using foot pedals (invented 1909) could combine multiple percussion instruments previously requiring several drummers.",
+  "acousticPrinciples": [
+    "Circular membrane vibration: Chladni/Bessel mode patterns (J₀, J₁, J₂) determine resonant frequencies",
+    "Snare wires create additional overtones via sympathetic rattle against bottom drumhead",
+    "Cymbals: bronze alloy plates produce inharmonic vibration modes characteristic of metallic idiophones",
+    "Kick drum coupling to floor and low-frequency air radiation through front port"
+  ],
+  "characteristics": {
+    "pitchRange": "Kick: 60–100 Hz; Snare: 200–300 Hz; Toms: 80–300 Hz; Cymbals: 300 Hz – 8 kHz",
+    "dynamicRange": "50 dB to 130 dB",
+    "timbralColor": "Percussive, noise-burst character; inharmonic spectrum",
+    "orchestralRole": "Rhythmic timekeeper, groove foundation, dynamic accents"
+  },
+  "soundDNA": {
+    "exciter": "Drumstick, mallet, or brush striking membrane or metallic plate",
+    "resonator": "Cylindrical shell (drum) or bronze plate (cymbal)",
+    "harmonics": "Inharmonic Bessel function mode spectrum",
+    "attackDecay": "Impulsive attack (< 1ms), fast exponential decay (50ms–2s by component)",
+    "timbreProfile": "Bright crack (snare), deep thud (kick), shimmering wash (cymbals)",
+    "radiationPattern": "Omnidirectional from drum heads; directional from hi-hat edges",
+    "fundamentalRange": "60 Hz – 8000 Hz",
+    "harmonicWarmth": 30,
+    "percussiveness": 100,
+    "sustainScore": 20,
+    "brightness": 75
+  },
+  "parts": {
+    "kick": {
+      "label": "Kick Drum (Bass Drum)",
+      "function": "22\" diameter kick drum producing low-frequency pulse (60–100 Hz) via foot-operated beater.",
+      "characteristics": { "material": "Maple shell, Mylar batter head, felt beater", "mechanism": "Large membrane Bessel mode J₀ (fundamental dominant)", "role": "Sub-bass rhythmic pulse" },
+      "explodeVector": [0, -0.3, 0.6]
+    },
+    "snare": {
+      "label": "Snare Drum",
+      "function": "14\" drum with steel snare wires on bottom head creating distinctive crack on backbeat.",
+      "characteristics": { "material": "Steel/aluminium shell, Coated batter head, steel snare wires", "mechanism": "Top head drives air column which snaps snare wires", "role": "Sharp attack backbeat accent" },
+      "explodeVector": [-0.7, 0, 0.4]
+    },
+    "toms": {
+      "label": "Tom-Toms",
+      "function": "Two rack toms (10\",12\") and one floor tom (14\") for pitched melodic fills.",
+      "characteristics": { "material": "Maple shells with transparent/coated batter heads", "mechanism": "Two-headed cylindrical resonators with tunable pitch", "role": "Melodic fills and pitch accents" },
+      "explodeVector": [0.4, 0.4, 0.3]
+    },
+    "hi_hat": {
+      "label": "Hi-Hat Cymbals",
+      "function": "Pair of 14\" cymbals on stand. Foot pedal controls open/closed gap, changing timbre.",
+      "characteristics": { "material": "B20 bronze alloy (80% copper, 20% tin)", "mechanism": "Inharmonic metallic vibration modes", "role": "Rhythmic timekeeping; bright closed/washy open" },
+      "explodeVector": [-0.8, 0.4, 0]
+    },
+    "crash": {
+      "label": "Crash Cymbal",
+      "function": "16–18\" crash cymbal for strong accents. Tapered edge produces explosive high-frequency burst.",
+      "characteristics": { "material": "Hand-hammered B20 bronze", "mechanism": "Wide-spectrum inharmonic plate vibration", "role": "Dynamic accent and musical emphasis" },
+      "explodeVector": [0.8, 0.5, 0]
+    },
+    "ride": {
+      "label": "Ride Cymbal",
+      "function": "20–22\" heavy ride cymbal providing clear 'ping' on the bell and controlled wash on the bow.",
+      "characteristics": { "material": "Heavy-cast B20 bronze with raised bell", "mechanism": "Localised bell radiation vs. broad-plate modes", "role": "Sustained rhythmic pattern timekeeping" },
+      "explodeVector": [0.9, 0.3, -0.3]
+    }
+  },
+  "followTheSound": [
+    { "step": 1, "partKey": "kick", "title": "Low-Frequency Pulse", "explanation": "Foot pedal drives felt beater into batter head. Large membrane (J₀ mode) pushes air column." },
+    { "step": 2, "partKey": "snare", "title": "Snare Crack", "explanation": "Stick strikes batter head; air pulse snaps snare wires on resonant head, adding broad-spectrum noise." },
+    { "step": 3, "partKey": "hi_hat", "title": "Rhythmic Timekeeping", "explanation": "Open/closed hi-hat creates alternating washy/tight metallic articulation patterns." },
+    { "step": 4, "partKey": "crash", "title": "Dynamic Accent", "explanation": "Full-arm strike on crash creates explosive inharmonic cymbal bloom decaying over 1–3 seconds." }
+  ],
+  "interactiveControls": {
+    "type": "drum_strike",
+    "keysOrTriggers": [
+      { "id": "kick", "label": "Kick", "note": "C1", "freq": 65.41 },
+      { "id": "snare", "label": "Snare", "note": "D2", "freq": 220.00 },
+      { "id": "hihat_closed", "label": "Hi-Hat (Closed)", "note": "F#4", "freq": 740.00 },
+      { "id": "hihat_open", "label": "Hi-Hat (Open)", "note": "A#4", "freq": 932.00 },
+      { "id": "crash", "label": "Crash", "note": "C5", "freq": 523.25 },
+      { "id": "tom1", "label": "Hi Tom", "note": "A2", "freq": 110.00 }
+    ]
+  },
+  "tags": ["percussion", "drums", "rhythm", "jazz", "rock", "groove", "membranes"]
+}

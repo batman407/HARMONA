@@ -1,0 +1,90 @@
+{
+  "id": "harp",
+  "name": "Concert Harp",
+  "family": "strings",
+  "familyName": "Plucked Chordophone",
+  "shortDescription": "47-string pedal harp with pillar-resonator-neck triangle producing a cascading harmonic palette.",
+  "description": "The concert harp is a triangular frame chordophone with 47 strings spanning six and a half octaves. Seven pedals (one per pitch class) rotate discs in the neck that shorten strings by a semitone or tone, enabling full chromatic modulation. Each string is individually tuned and plucked, coupling energy through the soundboard into the resonator box.",
+  "historicalOrigins": "The double-action pedal harp was developed by Sébastien Érard in Paris in 1810, enabling modulation to any key. Ancient harps appear in Mesopotamian art from 3000 BCE.",
+  "acousticPrinciples": [
+    "Each string obeys Mersenne's law: longer, heavier lower strings and shorter lighter upper strings",
+    "Pedal discs act as movable nuts, changing effective string length to raise pitch by semitone or tone",
+    "Soundboard amplifies vibration through a similar mechanism to the guitar",
+    "Short decay (no sustain pedal) creates the characteristic 'glissando' blend of notes"
+  ],
+  "characteristics": {
+    "pitchRange": "C1 (32.7 Hz) to G#7 (3322 Hz)",
+    "dynamicRange": "35 dB to 90 dB",
+    "timbralColor": "Clear, resonant, shimmering; bright upper register, warm lower octaves",
+    "orchestralRole": "Glissando effects, arpeggiated chords, solo melodic voice, orchestral colour"
+  },
+  "soundDNA": {
+    "exciter": "Finger tip plucking individual gut or nylon/steel strings",
+    "resonator": "Wooden resonator box (soundboard + enclosed air cavity)",
+    "harmonics": "Clean harmonic series; shorter upper strings are brighter with faster decay",
+    "attackDecay": "Fast pluck attack; exponential decay (0.5–8s depending on register)",
+    "timbreProfile": "Clear, bell-like upper register; warm, resonant bass",
+    "radiationPattern": "Forward radiation from soundboard; omnidirectional at lower frequencies",
+    "fundamentalRange": "33 Hz – 3322 Hz",
+    "harmonicWarmth": 78,
+    "percussiveness": 55,
+    "sustainScore": 55,
+    "brightness": 72
+  },
+  "parts": {
+    "resonator": {
+      "label": "Resonator Box",
+      "function": "Hollow wooden body amplifies string vibration through soundboard and enclosed air cavity.",
+      "characteristics": { "material": "Spruce soundboard, maple sides", "mechanism": "Plate vibration + Helmholtz air resonance", "role": "Primary acoustic amplifier" },
+      "explodeVector": [0, 0, 0]
+    },
+    "soundboard": {
+      "label": "Spruce Soundboard",
+      "function": "Front face of resonator directly driven by string vibration through the string anchor points.",
+      "characteristics": { "material": "Quarter-sawn Sitka Spruce", "mechanism": "Flexural dipole radiation", "role": "Main radiation surface" },
+      "explodeVector": [0, 0, 0.6]
+    },
+    "neck": {
+      "label": "Curved Neck",
+      "function": "Curved wooden neck housing pedal disc mechanisms that control string length.",
+      "characteristics": { "material": "Laminated maple with brass disc mechanisms", "mechanism": "Pedal-actuated string shortening discs", "role": "Structural top beam and pitch modulation" },
+      "explodeVector": [0, 1.0, 0.2]
+    },
+    "pillar": {
+      "label": "Pillar Column",
+      "function": "Load-bearing column resisting the total string tension of approximately 1000 kg combined.",
+      "characteristics": { "material": "Carved maple with internal pedal rod channels", "mechanism": "Hollow column transmits pedal rod force", "role": "Structural tension counter-force member" },
+      "explodeVector": [-0.5, 0, 0]
+    },
+    "strings": {
+      "label": "String Array (47 strings)",
+      "function": "47 individually-tuned strings spanning C1 to G#7. Colour-coded: C=red, F=black.",
+      "characteristics": { "material": "Gut (bass), nylon (mid), steel (treble)", "mechanism": "Transverse plucked standing waves", "role": "Primary oscillators across 6.5 octaves" },
+      "explodeVector": [0.3, 0, 0.5]
+    },
+    "pedals": {
+      "label": "Seven Pedals",
+      "function": "Double-action pedals in three notched positions (flat/natural/sharp) for full chromatic control.",
+      "characteristics": { "material": "Metal foot pedals with pivot mechanism", "mechanism": "Rod linkage rotates disc in neck to shorten strings", "role": "Chromatic modulation control" },
+      "explodeVector": [0, -0.8, 0.3]
+    }
+  },
+  "followTheSound": [
+    { "step": 1, "partKey": "strings", "title": "String Pluck", "explanation": "Finger tip plucks individual string, releasing stored elastic energy as transverse wave." },
+    { "step": 2, "partKey": "neck", "title": "Disc Mechanism (Pedal Pitch)", "explanation": "Pedal-actuated discs in the neck shorten the vibrating string length by semitone or tone." },
+    { "step": 3, "partKey": "soundboard", "title": "Soundboard Radiation", "explanation": "String vibration drives the spruce soundboard into flexural modes radiating sound forward." },
+    { "step": 4, "partKey": "resonator", "title": "Cavity Amplification", "explanation": "Resonator box body and air cavity amplify and colour the fundamental and harmonics." }
+  ],
+  "interactiveControls": {
+    "type": "string_pluck",
+    "keysOrTriggers": [
+      { "id": "c3", "label": "C3", "note": "C3", "freq": 130.81 },
+      { "id": "e3", "label": "E3", "note": "E3", "freq": 164.81 },
+      { "id": "g3", "label": "G3", "note": "G3", "freq": 196.00 },
+      { "id": "c4", "label": "C4", "note": "C4", "freq": 261.63 },
+      { "id": "e4", "label": "E4", "note": "E4", "freq": 329.63 },
+      { "id": "g4", "label": "G4", "note": "G4", "freq": 392.00 }
+    ]
+  },
+  "tags": ["plucked", "harp", "orchestral", "glissando", "classical", "sustain"]
+}

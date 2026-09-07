@@ -1,0 +1,106 @@
+{
+  "id": "kalimba",
+  "name": "Kalimba",
+  "family": "world",
+  "familyName": "Lamellophone",
+  "shortDescription": "African lamellophone with graduated sprung steel tines mounted on a resonant chambered soundboard.",
+  "description": "The kalimba (often termed mbira or thumb piano) is an ancient lamellophone indigenous to Central and Southern Africa. It consists of graduated metal strips (tines) clamped to a hollow wooden soundbox or solid resonator board. When plucked downward with the thumbs and released, the cantilevered tines vibrate at specific resonant modal frequencies, producing a delicate, shimmering, music-box-like chime infused with rich overtones and gentle acoustic tremolo created by blocking back sound holes.",
+  "historicalOrigins": "Lamellophones have existed in Africa for over 3,000 years (originally made with bamboo keys, later forged iron in the Zambezi valley around 1,300 years ago). Hugh Tracey introduced the modern diatonic kalimba worldwide in 1954.",
+  "acousticPrinciples": [
+    "Cantilever beam physics: frequency is inversely proportional to the square of tine length (f ∝ 1/L²)",
+    "Non-harmonic overtones: clamped free-ended bars produce modes at approximately 1x, 6.27x, and 17.5x the fundamental",
+    "Point-source coupling: tine vibrations transfer through bridge rod into thin solid or chambered soundboard",
+    "Wah-wah effect: covering and uncovering rear sound holes modulates internal air cavity Helmholtz resonance"
+  ],
+  "characteristics": {
+    "pitchRange": "C4 (261.6 Hz) to E6 (1318.5 Hz) on a standard 17-key model",
+    "dynamicRange": "30 dB to 75 dB",
+    "timbralColor": "Pure, chiming, crystalline, and metallic with a soft woody resonance and gentle overtone ping",
+    "orchestralRole": "Intimate meditative melodic lines, cyclical rhythmic counterpoint, ambient shimmer"
+  },
+  "soundDNA": {
+    "exciter": "Thumb nails flicking cantilevered spring steel tines downward",
+    "resonator": "Hollowed solid mahogany or koa sound chamber with circular front port and dual back vibrato holes",
+    "harmonics": "Bell-like inharmonic high metallic transient that quickly settles into pure sinusoidal fundamental",
+    "attackDecay": "Instant percussive ping attack (<5 ms); long singing decay (2.0 - 5.5s) on central keys",
+    "timbreProfile": "Hypnotic, organic music-box sparkle cushioned by warm hollow-wood acoustics",
+    "radiationPattern": "Upward front projection with direct omnidirectional air modulation from back vibrato ports",
+    "fundamentalRange": "261 Hz – 1318 Hz",
+    "harmonicWarmth": 70,
+    "percussiveness": 82,
+    "sustainScore": 68,
+    "brightness": 88
+  },
+  "parts": {
+    "soundbox": {
+      "label": "Mahogany Sound Chamber",
+      "function": "Acoustically tuned hollow wooden body providing Helmholtz cavity amplification and hand rest.",
+      "characteristics": { "material": "Solid African mahogany or koa with carved soundholes", "mechanism": "Helmholtz cavity resonator and wood flexure", "role": "Acoustic amplifier & ergonomics" },
+      "explodeVector": [0, 0, -0.5]
+    },
+    "bridge_rod": {
+      "label": "Steel Bridge Rod & Saddle",
+      "function": "Transfers down-pressure and bending moments of vibrating tines directly into the wooden top soundboard.",
+      "characteristics": { "material": "Polished steel cylindrical bar resting on rosewood pillow", "mechanism": "Knife-edge fulcrum and vibrational transfer", "role": "Energy coupling" },
+      "explodeVector": [0, 0.2, 0.2]
+    },
+    "retaining_bar": {
+      "label": "Tension Retaining Bar & Screws",
+      "function": "Heavy metal bar bolted into the body to firmly clamp the tines against the bridge and back rest.",
+      "characteristics": { "material": "High-tensile steel crossbar with mounting bolts", "mechanism": "Rigid clamping force establishing fixed-cantilever boundary conditions", "role": "Tension and tuning stability" },
+      "explodeVector": [0, 0.5, 0.3]
+    },
+    "tines": {
+      "label": "Spring Steel Tines (17 Keys)",
+      "function": "Graduated steel tongues of varying lengths tuned in an alternating left-right ascending V-pattern.",
+      "characteristics": { "material": "Mineral tempered spring steel with rounded tips", "mechanism": "Cantilever transverse flexural beam vibration", "role": "Primary tone generator" },
+      "explodeVector": [0, 0, 0.7]
+    },
+    "soundhole": {
+      "label": "Acoustic Port & Vibrato Holes",
+      "function": "Front central rosette and twin rear thumb holes for modulating cavity resonance.",
+      "characteristics": { "material": "Precision laser-cut acoustic apertures", "mechanism": "Varying Helmholtz acoustic compliance by finger occlusion (wah-wah effect)", "role": "Timbre and tremolo modulation" },
+      "explodeVector": [0, -0.4, -0.2]
+    }
+  },
+  "followTheSound": [
+    {
+      "step": 1,
+      "partKey": "tines",
+      "title": "Thumb Pluck & Release",
+      "explanation": "Musician presses down on the curved metal tine tip and slips off, causing the cantilever bar to snap back into oscillation."
+    },
+    {
+      "step": 2,
+      "partKey": "bridge_rod",
+      "title": "Bridge Pressure Coupling",
+      "explanation": "Oscillation cycles create alternating high and low shear forces against the steel cylindrical bridge fulcrum."
+    },
+    {
+      "step": 3,
+      "partKey": "soundbox",
+      "title": "Soundbox Amplification",
+      "explanation": "Vibrations flex the hardwood soundboard, converting tiny mechanical metal motions into audible acoustic volume."
+    },
+    {
+      "step": 4,
+      "partKey": "soundhole",
+      "title": "Helmholtz Vibrato Porting",
+      "explanation": "Sound escapes through the center port; covering the rear ports with index fingers dips the cavity pitch to yield a 'wah-wah' tremolo."
+    }
+  ],
+  "interactiveControls": {
+    "type": "tine_pluck",
+    "keysOrTriggers": [
+      { "id": "kalimba_c4", "label": "1 (C4)", "note": "C4", "freq": 261.63 },
+      { "id": "kalimba_d4", "label": "2 (D4)", "note": "D4", "freq": 293.66 },
+      { "id": "kalimba_e4", "label": "3 (E4)", "note": "E4", "freq": 329.63 },
+      { "id": "kalimba_f4", "label": "4 (F4)", "note": "F4", "freq": 349.23 },
+      { "id": "kalimba_g4", "label": "5 (G4)", "note": "G4", "freq": 392.00 },
+      { "id": "kalimba_a4", "label": "6 (A4)", "note": "A4", "freq": 440.00 },
+      { "id": "kalimba_b4", "label": "7 (B4)", "note": "B4", "freq": 493.88 },
+      { "id": "kalimba_c5", "label": "1° (C5)", "note": "C5", "freq": 523.25 }
+    ]
+  },
+  "tags": ["acoustic", "world", "percussion", "lamellophone", "african", "chime"]
+}

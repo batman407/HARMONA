@@ -1,0 +1,91 @@
+{
+  "id": "pipe_organ",
+  "name": "Pipe Organ",
+  "family": "keyboards",
+  "familyName": "Aerophone Keyboard",
+  "shortDescription": "Pressurised-air instrument producing continuous tones through vibrating air columns in pipes controlled by keyboard manuals.",
+  "description": "The pipe organ is the largest and most complex musical instrument. Pressurised air from bellows or an electric blower feeds a wind chest. When a key is depressed, a pallet opens admitting air into one or more organ pipes. Edge tones or reed tongues set the air column into resonance, producing a continuous, non-decaying tone for as long as the key is held.",
+  "historicalOrigins": "The hydraulis (water organ) was invented by Ctesibius of Alexandria around 246 BCE. The medieval portative organ evolved into the great cathedral pipe organ by the 15th century.",
+  "acousticPrinciples": [
+    "Edge tones: air jet striking a sharp edge (flue pipes) creates vortex oscillation coupling to pipe resonant length",
+    "Reed pipes: metal tongue vibrates against shallot at natural frequency, exciting air column",
+    "Pipe length sets fundamental pitch: open pipe = λ/2, stopped pipe = λ/4 (one octave lower)",
+    "Stops (registers) engage/disengage pipe ranks, combining timbres additively"
+  ],
+  "characteristics": {
+    "pitchRange": "C0 (16.4 Hz) to C8 (4186 Hz) depending on ranks",
+    "dynamicRange": "Fixed per stop; 50–110 dB by stop selection",
+    "timbralColor": "Limitless via stop combinations: pure flute, bright principal, buzzy reed",
+    "orchestralRole": "Liturgical accompaniment, choral foundation, solo virtuosity"
+  },
+  "soundDNA": {
+    "exciter": "Air jet striking a lip (flue) or vibrating metal tongue (reed) in each pipe",
+    "resonator": "Metal or wooden cylindrical/conical pipe cavity of specific length",
+    "harmonics": "Stop-dependent: open flute = fundamental only; Mixture = high harmonics added",
+    "attackDecay": "Virtually instant onset when key opens; sustained indefinitely; stops instantly at key release",
+    "timbreProfile": "Pure and regal; highly variable by stop selection from soft flute to full plenum",
+    "radiationPattern": "Pipes radiate outward from pipe mouth; large instruments fill reverberant cathedral space",
+    "fundamentalRange": "16 Hz – 4186 Hz",
+    "harmonicWarmth": 70,
+    "percussiveness": 5,
+    "sustainScore": 100,
+    "brightness": 60
+  },
+  "parts": {
+    "pipes": {
+      "label": "Pipe Ranks",
+      "function": "Rows of cylindrical or conical pipes, each producing one pitch. Open pipes = half-wavelength resonance.",
+      "characteristics": { "material": "Lead/tin alloy (metal pipes) or wood (wooden pipes)", "mechanism": "Air column resonance at λ/2 (open) or λ/4 (stopped)", "role": "Primary tone generator for each pitch" },
+      "explodeVector": [0, 0.8, 0]
+    },
+    "manuals": {
+      "label": "Keyboard Manuals",
+      "function": "One or more 61-key manuals (keyboards) connecting key to pallet valves for each pipe rank.",
+      "characteristics": { "material": "Ivory or phenolic key surfaces, wooden key levers", "mechanism": "Mechanical or electric key action opens wind-chest pallet", "role": "Performer interface and pitch selection" },
+      "explodeVector": [0, -0.2, 0.6]
+    },
+    "stops": {
+      "label": "Stop Knobs / Drawbars",
+      "function": "Registers activating specific pipe ranks. Combining stops creates additive timbral mixtures.",
+      "characteristics": { "material": "Wooden or plastic drawbars/knobs", "mechanism": "Slider gate admitting wind to selected pipe rank", "role": "Timbral selection and combination" },
+      "explodeVector": [0.5, 0, 0.5]
+    },
+    "wind_chest": {
+      "label": "Wind Chest",
+      "function": "Pressurised air manifold beneath pipes. Pallets open to admit air to individual pipes.",
+      "characteristics": { "material": "Sealed wooden chest with leather pallet valves", "mechanism": "Valve-controlled pressurised air distribution", "role": "Air supply and key-to-pipe interface" },
+      "explodeVector": [0, -0.5, 0]
+    },
+    "bellows": {
+      "label": "Blower & Bellows",
+      "function": "Electric blower or foot-pumped bellows maintains constant regulated air pressure (typical: 75–100mm WC).",
+      "characteristics": { "material": "Electric centrifugal blower or leather-covered bellows", "mechanism": "Constant-pressure air supply with regulator", "role": "Pressurised air supply reservoir" },
+      "explodeVector": [0, -1.0, 0]
+    },
+    "pedal_board": {
+      "label": "Pedal Board",
+      "function": "32-note concave/radiating pedalboard played by organist's feet, controlling the lowest bass pipes.",
+      "characteristics": { "material": "Wooden pedals in AGO/BDO standard layout", "mechanism": "Same key-action as manuals for bass pipe ranks", "role": "Bass register control interface" },
+      "explodeVector": [0, -0.7, 0.5]
+    }
+  },
+  "followTheSound": [
+    { "step": 1, "partKey": "bellows", "title": "Pressurised Air Supply", "explanation": "Electric blower maintains constant wind pressure feeding the wind chest." },
+    { "step": 2, "partKey": "wind_chest", "title": "Pallet Opens", "explanation": "Depressing a key opens a pallet valve, admitting pressurised air to the pipe." },
+    { "step": 3, "partKey": "pipes", "title": "Pipe Resonance", "explanation": "Air jet strikes pipe mouth edge (flue) or reed tongue, exciting the pipe air column into resonance." },
+    { "step": 4, "partKey": "stops", "title": "Stop Mixture", "explanation": "Active stops determine which pipe ranks sound simultaneously, creating additive timbral combinations." }
+  ],
+  "interactiveControls": {
+    "type": "piano_keys",
+    "keysOrTriggers": [
+      { "id": "c3", "label": "C3", "note": "C3", "freq": 130.81 },
+      { "id": "e3", "label": "E3", "note": "E3", "freq": 164.81 },
+      { "id": "g3", "label": "G3", "note": "G3", "freq": 196.00 },
+      { "id": "c4", "label": "C4", "note": "C4", "freq": 261.63 },
+      { "id": "e4", "label": "E4", "note": "E4", "freq": 329.63 },
+      { "id": "g4", "label": "G4", "note": "G4", "freq": 392.00 },
+      { "id": "c5", "label": "C5", "note": "C5", "freq": 523.25 }
+    ]
+  },
+  "tags": ["organ", "keyboard", "church", "classical", "sustained", "aerophone"]
+}

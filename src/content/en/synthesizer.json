@@ -1,0 +1,90 @@
+{
+  "id": "synthesizer",
+  "name": "Synthesizer",
+  "family": "electronic",
+  "familyName": "Electronic Oscillator",
+  "shortDescription": "Voltage-controlled electronic instrument generating and sculpting sound from oscillators, filters, and amplifiers.",
+  "description": "A synthesizer generates sound electronically through a signal path: Oscillator (VCO) → Filter (VCF) → Amplifier (VCA), each controlled by voltage. Oscillators generate primitive waveforms (sine, saw, square, triangle, noise). Filters shape the harmonic content. The amplifier controls dynamics. Envelope generators (ADSR) define how each stage changes over time. LFOs (Low Frequency Oscillators) add modulation like vibrato or tremolo.",
+  "historicalOrigins": "Robert Moog commercialised the voltage-controlled synthesizer in 1964. Wendy Carlos's 'Switched-On Bach' (1968) demonstrated its musicality. Sequential Circuits Prophet-5 (1978) added polyphonic memory presets.",
+  "acousticPrinciples": [
+    "VCO (Voltage-Controlled Oscillator): generates periodic waveforms at electrically-controlled frequencies",
+    "VCF (Voltage-Controlled Filter): subtractive synthesis — removes frequency bands from rich waveforms",
+    "VCA (Voltage-Controlled Amplifier): controls signal amplitude over time via ADSR envelope",
+    "ADSR: Attack (rise time), Decay (fall to sustain), Sustain (held level), Release (fade)"
+  ],
+  "characteristics": {
+    "pitchRange": "Sub-bass to ultrasonic; software unlimited",
+    "dynamicRange": "Defined by D/A converter bit depth; theoretically unlimited",
+    "timbralColor": "Infinitely variable: from pure sine to harsh distortion noise",
+    "orchestralRole": "Bass line, lead melody, pad textures, FX, sound design"
+  },
+  "soundDNA": {
+    "exciter": "Voltage-controlled oscillator generating primitive periodic or random waveforms",
+    "resonator": "Voltage-controlled low-pass filter (VCF) — Moog ladder or state-variable topology",
+    "harmonics": "Filter cutoff + resonance shape harmonic emphasis",
+    "attackDecay": "ADSR envelope fully configurable; 0ms to infinite sustain",
+    "timbreProfile": "Infinitely malleable: bright leads, warm pads, metallic FM bells",
+    "radiationPattern": "Electronic — depends on speaker or headphone configuration",
+    "fundamentalRange": "1 Hz – 20000+ Hz (electronically variable)",
+    "harmonicWarmth": 65,
+    "percussiveness": 50,
+    "sustainScore": 70,
+    "brightness": 75
+  },
+  "parts": {
+    "keys": {
+      "label": "MIDI Keyboard",
+      "function": "61-key velocity-sensitive keyboard sending MIDI note-on/off and velocity data.",
+      "characteristics": { "material": "Plastic/rubber key mechanisms with velocity sensors", "mechanism": "MIDI voltage: key down = note number + velocity byte", "role": "Pitch and velocity performance interface" },
+      "explodeVector": [0, -0.3, 0.5]
+    },
+    "oscillator_section": {
+      "label": "VCO (Oscillator)",
+      "function": "Two or more voltage-controlled oscillators generating saw, square, sine, and triangle waveforms.",
+      "characteristics": { "material": "Analogue: discrete transistor tempco-compensated VCO; Digital: FPGA waveform generator", "mechanism": "Controlled frequency oscillation; waveform selection adds harmonic content", "role": "Primary tone generator" },
+      "explodeVector": [-0.5, 0.3, 0.2]
+    },
+    "filter_section": {
+      "label": "VCF (Filter)",
+      "function": "Resonant low-pass, high-pass, or band-pass filter shaping harmonic content in real time.",
+      "characteristics": { "material": "Moog ladder: cascaded transistor pairs; or OTA topology", "mechanism": "Cutoff frequency (fc) removes harmonics above/below threshold; Q adds resonant peak", "role": "Harmonic sculpting (subtractive synthesis)" },
+      "explodeVector": [0, 0.3, 0.2]
+    },
+    "amp_section": {
+      "label": "VCA & ADSR Envelope",
+      "function": "Voltage-controlled amplifier with ADSR envelope shaping note dynamics over time.",
+      "characteristics": { "material": "OTA-based VCA with CV-controlled gain", "mechanism": "Gain = f(ADSR CV); Attack = rise time, Decay = fall, Sustain = level, Release = fade", "role": "Dynamic amplitude shaping" },
+      "explodeVector": [0.5, 0.3, 0.2]
+    },
+    "knobs": {
+      "label": "Control Knobs & Sliders",
+      "function": "Rotary potentiometers and faders directly control VCO pitch, VCF cutoff, resonance, ADSR times.",
+      "characteristics": { "material": "Conductive plastic rotary pots and linear faders", "mechanism": "Voltage divider output scales CV input to target parameter", "role": "Real-time parameter control interface" },
+      "explodeVector": [0, 0.6, 0]
+    },
+    "display": {
+      "label": "Display & Patch Memory",
+      "function": "LCD/OLED display shows patch name, oscilloscope view, and parameter values for stored presets.",
+      "characteristics": { "material": "LCD matrix or OLED screen panel", "mechanism": "Patch: parameter values stored in NVRAM, recalled by preset number", "role": "Preset management and parameter visualisation" },
+      "explodeVector": [-0.3, 0.6, 0]
+    }
+  },
+  "followTheSound": [
+    { "step": 1, "partKey": "keys", "title": "MIDI Note On", "explanation": "Key strike sends MIDI note number and velocity. Voltage-controlled oscillator receives CV pitch." },
+    { "step": 2, "partKey": "oscillator_section", "title": "Waveform Generation", "explanation": "VCO generates raw sawtooth/square/sine waveform at MIDI-specified frequency." },
+    { "step": 3, "partKey": "filter_section", "title": "Subtractive Filtering", "explanation": "VCF removes harmonics above cutoff frequency. Resonance peak emphasises harmonics at fc." },
+    { "step": 4, "partKey": "amp_section", "title": "ADSR Dynamics", "explanation": "VCA shapes amplitude over time: Attack rise → Decay fall → Sustain hold → Release fade." }
+  ],
+  "interactiveControls": {
+    "type": "synth_keys",
+    "keysOrTriggers": [
+      { "id": "c2", "label": "C2 (Sub)", "note": "C2", "freq": 65.41 },
+      { "id": "c3", "label": "C3", "note": "C3", "freq": 130.81 },
+      { "id": "c4", "label": "C4 (Middle)", "note": "C4", "freq": 261.63 },
+      { "id": "a4", "label": "A4 (440 Hz)", "note": "A4", "freq": 440.00 },
+      { "id": "c5", "label": "C5", "note": "C5", "freq": 523.25 },
+      { "id": "e5", "label": "E5", "note": "E5", "freq": 659.25 }
+    ]
+  },
+  "tags": ["electronic", "synth", "oscillator", "filter", "ADSR", "modular", "electronic music"]
+}

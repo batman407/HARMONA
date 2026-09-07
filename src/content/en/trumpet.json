@@ -1,0 +1,128 @@
+{
+  "id": "trumpet",
+  "name": "B♭ Orchestral Trumpet",
+  "family": "brass",
+  "familyName": "Aerophone (Brass)",
+  "shortDescription": "Three-piston brass aerophone with cylindrical bore terminating in an exponential flare bell.",
+  "description": "The trumpet functions as a lip-reed aerophone. The musician's buzzing lips serve as an acoustic valve controlling air stream pulses into a standing longitudinal sound wave within 1.4 meters of wrapped brass tubing.",
+  "historicalOrigins": "Evolved from natural signal horns and coiled cavalry trumpets; revolutionized in 1818 by Stölzel and Blühmel's invention of the Périnet piston valve.",
+  "acousticPrinciples": [
+    "Lip-reed excitation: Lips act as a pressure-controlled biological valve oscillating at acoustic feedback resonance",
+    "Standing wave column: Longitudinal pressure nodes and antinodes formed in air column",
+    "Exponential bell impedance match: Flare matches internal high acoustic impedance to low ambient room impedance, radiating high harmonics"
+  ],
+  "characteristics": {
+    "pitchRange": "F#3 (185 Hz) to C6 (1046 Hz)",
+    "dynamicRange": "45 dB to 115 dB (loudest orchestral instrument)",
+    "timbralColor": "Piercing, brilliant, noble, cutting, commanding brilliance",
+    "orchestralRole": "Fanfare leader, dramatic climax, harmonic brass choir soprano"
+  },
+  "soundDNA": {
+    "exciter": "Oscillating human lips (embouchure) pressed against cup mouthpiece",
+    "resonator": "1.4m yellow brass acoustic air column with exponential flare bell",
+    "harmonics": "Complete harmonic series aligned by bell flare and mouthpipe tapering",
+    "attackDecay": "Direct sustained aerodynamic excitation with instant tonguing attack",
+    "timbreProfile": "Brilliant brassy envelope with dramatic high harmonic saturation at forte",
+    "radiationPattern": "Highly directional forward acoustic beam emitting from the bell",
+    "fundamentalRange": "185 Hz – 1,047 Hz",
+    "harmonicWarmth": 75,
+    "percussiveness": 35,
+    "sustainScore": 90,
+    "brightness": 100
+  },
+  "parts": {
+    "bell": {
+      "label": "Exponential Flare Bell",
+      "function": "Transforms planar pressure waves inside tubing into spherical waves; radiates upper partials.",
+      "characteristics": {
+        "material": "One-piece hand-hammered yellow brass (70% copper / 30% zinc)",
+        "mechanism": "Acoustic impedance matching horn",
+        "role": "Sound radiator and harmonic alignment"
+      },
+      "explodeVector": [0, 0, -0.6]
+    },
+    "valves": {
+      "label": "Three Périnet Piston Valves",
+      "function": "Reroutes air stream into auxiliary tubing loops, instantly lengthening the acoustic column to lower pitch.",
+      "characteristics": {
+        "material": "Monel nickel-copper alloy pistons in honed brass casings",
+        "mechanism": "Tri-port air diverter pistons with stainless steel springs",
+        "role": "Pitch and tube length modulator"
+      },
+      "explodeVector": [0, 0.45, 0]
+    },
+    "leadpipe": {
+      "label": "Leadpipe & Tuning Slide",
+      "function": "Gradually expands air stream diameter from mouthpiece to main valve block; slides to tune concert pitch.",
+      "characteristics": {
+        "material": "Gold brass with silver-plated ferrule",
+        "mechanism": "Venturi taper acoustic compressor and telescoping slide",
+        "role": "Airflow acceleration and tuning"
+      },
+      "explodeVector": [0, 0, 0.5]
+    },
+    "mouthpiece": {
+      "label": "Cup Mouthpiece",
+      "function": "Couples vibrating lips with the air column; cup depth and throat diameter shape timbre brightness.",
+      "characteristics": {
+        "material": "Machined solid brass finished in 24k gold or silver plate",
+        "mechanism": "Acoustic cup capacitor and throat nozzle",
+        "role": "Exciter interface and impedance coupler"
+      },
+      "explodeVector": [0, 0, 0.85]
+    },
+    "tubing": {
+      "label": "Valve Slide Loops",
+      "function": "1st slide lowers pitch by 1 tone; 2nd slide by semitone; 3rd slide by 1.5 tones.",
+      "characteristics": {
+        "material": "Drawn seamless brass tubing with water key spit valve",
+        "mechanism": "Acoustic path extension loop",
+        "role": "Chromatic column extensions"
+      },
+      "explodeVector": [0.4, 0, 0]
+    }
+  },
+  "followTheSound": [
+    {
+      "step": 1,
+      "partKey": "mouthpiece",
+      "title": "Lip Embouchure Buzz",
+      "explanation": "Player blows pressurized air between tightened lips, creating rapid pressure pulses into the mouthpiece cup."
+    },
+    {
+      "step": 2,
+      "partKey": "leadpipe",
+      "title": "Acoustic Column Coupling",
+      "explanation": "The venturi taper in the leadpipe matches acoustic impedance and guides shockwaves into the tubing."
+    },
+    {
+      "step": 3,
+      "partKey": "valves",
+      "title": "Valve Port Selection",
+      "explanation": "Depressing pistons reroutes the wave through auxiliary tubing loops, changing fundamental resonant frequency."
+    },
+    {
+      "step": 4,
+      "partKey": "tubing",
+      "title": "Longitudinal Standing Wave",
+      "explanation": "Acoustic waves reflect back and forth within the brass column, establishing standing pressure modes."
+    },
+    {
+      "step": 5,
+      "partKey": "bell",
+      "title": "Bell Radiation & Projection",
+      "explanation": "The exponential flare bell converts internal acoustic pressure into free-field sound waves that cut through an orchestra."
+    }
+  ],
+  "interactiveControls": {
+    "type": "brass_valves",
+    "keysOrTriggers": [
+      { "id": "open", "label": "Open (No Valves) - C4", "note": "C4", "freq": 261.63 },
+      { "id": "valve1", "label": "Valve 1 - B♭3", "note": "Bb3", "freq": 233.08 },
+      { "id": "valve2", "label": "Valve 2 - B3", "note": "B3", "freq": 246.94 },
+      { "id": "valve12", "label": "Valves 1+2 - A3", "note": "A3", "freq": 220.00 },
+      { "id": "open_high", "label": "Open (High) - G4", "note": "G4", "freq": 392.00 },
+      { "id": "open_c5", "label": "Open (Lead) - C5", "note": "C5", "freq": 523.25 }
+    ]
+  }
+}

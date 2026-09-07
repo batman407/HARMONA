@@ -1,0 +1,111 @@
+{
+  "id": "kora",
+  "name": "Kora",
+  "family": "world",
+  "familyName": "Spike Harp-Lute",
+  "shortDescription": "21-string West African harp-lute with calabash gourd resonator, cowskin soundboard, and notched bridge.",
+  "description": "The kora is a 21-string West African chordophone played by the Jali (griot) caste across Gambia, Senegal, Mali, and Guinea. It combines features of the harp and the lute: strings run across a raised, notched bridge perpendicular to a cowhide sound table stretched over a large calabash gourd resonator. Played with thumb and index fingers of both hands, the kora produces intricate polyphonic ostinatos (kumbengo) and soaring vocal improvisations (birimintingo).",
+  "historicalOrigins": "Originating in the Mandinka empire (Kaabu) along the Gambia River in the 16th century, the kora is the sacred instrument of oral historians, genealogists, and court musicians.",
+  "acousticPrinciples": [
+    "Strings pass over notched wooden bridge resting perpendicularly on cowhide membrane table",
+    "String pluck excites bridge rocking motion, driving skin membrane with fast acoustic rise-time",
+    "Large half-calabash gourd functions as a natural Helmholtz acoustic chamber with side soundhole",
+    "Split string plane allows two hands to play independent polyrhythmic bass and treble lines simultaneously"
+  ],
+  "characteristics": {
+    "pitchRange": "F1 (43.7 Hz) to C6 (1046.5 Hz)",
+    "dynamicRange": "40 dB to 85 dB",
+    "timbralColor": "Sparkling, liquid, harp-like brilliance combined with guitar-like punch and warm gourd body resonance",
+    "orchestralRole": "Griot storytelling lead, polyrhythmic cyclical ostinatos (kumbengo), virtuosic soloing (birimintingo)"
+  },
+  "soundDNA": {
+    "exciter": "Thumbs and index finger nails plucking nylon / monofilament fishing line strings",
+    "resonator": "Calabash gourd with stretched wet-cured cowhide soundboard and rosewood bridge",
+    "harmonics": "Rich mid-high harmonics with quick transient spike and resonant low-end 'thump'",
+    "attackDecay": "Snappy transient attack (<15 ms); moderate sustain (1.5 - 3.5s) in calabash body",
+    "timbreProfile": "Cascade of crystalline plucks rooted in an organic woody, skin-driven cavity resonance",
+    "radiationPattern": "Forward acoustic projection from skin table; warm hemispherical spread from calabash side port",
+    "fundamentalRange": "65 Hz – 1046 Hz",
+    "harmonicWarmth": 85,
+    "percussiveness": 74,
+    "sustainScore": 60,
+    "brightness": 78
+  },
+  "parts": {
+    "calabash": {
+      "label": "Calabash Gourd (Resonator)",
+      "function": "Large dried gourd sphere cut in half, providing structural acoustic bowl and Helmholtz chamber.",
+      "characteristics": { "material": "Dried calabash gourd (Lagenaria siceraria)", "mechanism": "Cavity air resonance + body reflection", "role": "Primary acoustic volume amplifier" },
+      "explodeVector": [0, 0, -0.6]
+    },
+    "skin_table": {
+      "label": "Cowskin Sound Table",
+      "function": "Wet-stretched shaved cowhide tacked to the gourd lip, transmitting bridge vibrations to the chamber.",
+      "characteristics": { "material": "Cured cowhide parchment fastened with chrome upholstery tacks", "mechanism": "Membranophone-style high-tension diaphragm", "role": "Primary sound radiating surface" },
+      "explodeVector": [0, 0, 0.4]
+    },
+    "neck_stick": {
+      "label": "Hardwood Neck (Spike)",
+      "function": "Straight hardwood pole passing completely through the gourd body to anchor strings and bridge.",
+      "characteristics": { "material": "Guénou (Pterocarpus erinaceus) rosewood", "mechanism": "Rigid structural spine resisting multi-string tension", "role": "Structural anchor" },
+      "explodeVector": [0, 0.8, 0]
+    },
+    "bridge": {
+      "label": "Notched Rosewood Bridge",
+      "function": "Stepped upright bridge separating 21 strings into two parallel vertical planes (11 left, 10 right).",
+      "characteristics": { "material": "Hardwood padauk with leather base cushion", "mechanism": "Rocking lever transmitting string tension to skin table", "role": "Vibrational transducer" },
+      "explodeVector": [0, 0, 0.8]
+    },
+    "handposts": {
+      "label": "Handposts & Crossbar",
+      "function": "Wooden handles gripped by the 3rd, 4th, and 5th fingers while thumbs and index fingers pluck.",
+      "characteristics": { "material": "Carved hardwood dowels", "mechanism": "Ergonomic anchor for two-handed polyrhythmic dexterity", "role": "Player stability" },
+      "explodeVector": [0.4, 0, 0.2]
+    },
+    "strings": {
+      "label": "21 Plucked Strings",
+      "function": "Monofilament strings tuned heptatonically in Silaba, Tomora, or Hardino scales.",
+      "characteristics": { "material": "Modern nylon monofilament (formerly twisted antelope hide)", "mechanism": "Transverse standing waves", "role": "Primary vibration generator" },
+      "explodeVector": [0, 0, 1.0]
+    }
+  },
+  "followTheSound": [
+    {
+      "step": 1,
+      "partKey": "strings",
+      "title": "Dual-Hand Pluck",
+      "explanation": "Player uses thumbs (downward bass plucks) and index fingers (upward treble plucks) on separate string planes."
+    },
+    {
+      "step": 2,
+      "partKey": "bridge",
+      "title": "Upright Bridge Levering",
+      "explanation": "String vibration rocks the tall, upright bridge down into the center of the taught cowhide sound table."
+    },
+    {
+      "step": 3,
+      "partKey": "skin_table",
+      "title": "Skin Membrane Excitation",
+      "explanation": "The cowskin membrane flexes vigorously, projecting bright, punchy acoustic transient sound pressure."
+    },
+    {
+      "step": 4,
+      "partKey": "calabash",
+      "title": "Calabash Cavity Resonance",
+      "explanation": "The deep spherical gourd reinforces fundamental warm lows, escaping through the side monitor port to the musician's ears."
+    }
+  ],
+  "interactiveControls": {
+    "type": "string_pluck",
+    "keysOrTriggers": [
+      { "id": "kora_f2", "label": "F2 (Bass)", "note": "F2", "freq": 87.31 },
+      { "id": "kora_c3", "label": "C3 (Root)", "note": "C3", "freq": 130.81 },
+      { "id": "kora_f3", "label": "F3 (Fifth)", "note": "F3", "freq": 174.61 },
+      { "id": "kora_a3", "label": "A3 (Third)", "note": "A3", "freq": 220.00 },
+      { "id": "kora_c4", "label": "C4 (Treble)", "note": "C4", "freq": 261.63 },
+      { "id": "kora_e4", "label": "E4 (High)", "note": "E4", "freq": 329.63 },
+      { "id": "kora_g4", "label": "G4 (Lead)", "note": "G4", "freq": 392.00 }
+    ]
+  },
+  "tags": ["acoustic", "world", "strings", "harp", "african", "folklore"]
+}
