@@ -32,8 +32,9 @@ export const DisassembleMode: React.FC<DisassembleModeProps> = ({ instrument }) 
   const resetDisassembly = useViewerStore((s) => s.resetDisassembly);
 
   const capability = instrument.modelCapability;
-  const supportsDisassemble = capability?.supportsDisassemble ?? true;
-  const hasModel = capability?.hasModel ?? false;
+  const isExternalGlb = capability?.hasModel ?? false;
+  // If external GLB is used, check if it has multiple parts; if using built-in models, all 17 have rich parts
+  const supportsDisassemble = isExternalGlb ? (capability?.supportsDisassemble ?? false) : Object.keys(instrument.parts).length > 0;
 
   const selectedPart = selectedPartKey ? instrument.parts[selectedPartKey] : null;
 
@@ -60,18 +61,8 @@ export const DisassembleMode: React.FC<DisassembleModeProps> = ({ instrument }) 
 
   return (
     <div className="flex flex-col gap-4 text-left select-none">
-      {/* Capability Notification Banner if Disassemble is not supported */}
-      {!hasModel ? (
-        <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-start gap-2.5 text-xs text-amber-300">
-          <Clock className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-          <div className="space-y-1">
-            <span className="font-semibold block">Photoreal 3D Model in Production</span>
-            <p className="text-[11px] text-amber-300/80 leading-relaxed">
-              Disassembly controls are disabled until the high-fidelity GLB asset is installed via <code className="px-1 py-0.5 bg-black/40 rounded">npm run fetch:models</code>.
-            </p>
-          </div>
-        </div>
-      ) : !supportsDisassemble ? (
+      {/* Capability Notification Banner if Disassemble is not supported for external single-mesh */}
+      {isExternalGlb && !supportsDisassemble ? (
         <div className="p-3.5 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-start gap-2.5 text-xs text-blue-300">
           <AlertCircle className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
           <div className="space-y-1">
