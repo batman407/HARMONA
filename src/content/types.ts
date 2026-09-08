@@ -76,6 +76,20 @@ export interface InstrumentData {
     }[];
   };
   tags?: string[];
+  heroImageUrl?: string;
+  modelCapability?: ModelCapability;
+}
+
+export interface ModelCapability {
+  hasModel: boolean;
+  isPhotoreal: boolean;
+  hasParts: boolean;
+  supportsDisassemble: boolean;
+  supportsXray: boolean;
+  supportsActivate: boolean;
+  modelUrl?: string;
+  heroImageUrl?: string;
+  statusMessage?: string;
 }
 
 /** Placeholder entry for Coming Soon instruments */
@@ -86,4 +100,5 @@ export interface ComingSoonInstrument {
   familyName: string;
   shortDescription: string;
   comingSoon: true;
+  reason?: string;
 }

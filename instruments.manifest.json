@@ -1,0 +1,155 @@
+[
+  {
+    "id": "guitar",
+    "name": "Classical Acoustic Guitar",
+    "family": "strings",
+    "keywords": ["classical guitar", "acoustic guitar", "spanish guitar"],
+    "minVertexCount": 1000,
+    "maxVertexCount": 200000,
+    "expectedParts": ["body", "soundboard", "neck", "bridge", "strings", "headstock"]
+  },
+  {
+    "id": "electric_guitar",
+    "name": "Electric Guitar",
+    "family": "strings",
+    "keywords": ["electric guitar", "fender stratocaster", "gibson les paul"],
+    "minVertexCount": 1500,
+    "maxVertexCount": 250000,
+    "expectedParts": ["body", "pickups", "bridge", "neck", "fretboard", "strings", "knobs"]
+  },
+  {
+    "id": "bass_guitar",
+    "name": "Electric Bass Guitar",
+    "family": "strings",
+    "keywords": ["bass guitar", "precision bass", "electric bass"],
+    "minVertexCount": 1500,
+    "maxVertexCount": 250000,
+    "expectedParts": ["body", "pickup", "bridge", "neck", "fretboard", "strings", "tuners"]
+  },
+  {
+    "id": "violin",
+    "name": "Orchestral Violin",
+    "family": "strings",
+    "keywords": ["violin", "fiddle", "stradivarius violin"],
+    "minVertexCount": 1500,
+    "maxVertexCount": 250000,
+    "expectedParts": ["body", "top_plate", "bridge", "strings", "fingerboard", "chinrest", "scroll"]
+  },
+  {
+    "id": "harp",
+    "name": "Concert Pedal Harp",
+    "family": "strings",
+    "keywords": ["concert harp", "pedal harp", "harp musical instrument"],
+    "minVertexCount": 2000,
+    "maxVertexCount": 300000,
+    "expectedParts": ["resonator", "soundboard", "neck", "pillar", "strings", "pedals"]
+  },
+  {
+    "id": "piano",
+    "name": "Grand Piano",
+    "family": "keyboards",
+    "keywords": ["grand piano", "steinway grand piano", "piano"],
+    "minVertexCount": 2500,
+    "maxVertexCount": 350000,
+    "expectedParts": ["body", "lid", "keys", "pedals", "music_stand", "legs"]
+  },
+  {
+    "id": "pipe_organ",
+    "name": "Cathedral Pipe Organ",
+    "family": "keyboards",
+    "keywords": ["pipe organ", "church organ", "cathedral organ"],
+    "minVertexCount": 2000,
+    "maxVertexCount": 350000,
+    "expectedParts": ["pipes", "manuals", "stops", "wind_chest", "pedal_board"]
+  },
+  {
+    "id": "drum",
+    "name": "Concert Snare Drum",
+    "family": "percussion",
+    "keywords": ["snare drum", "concert snare", "marching snare"],
+    "minVertexCount": 1000,
+    "maxVertexCount": 200000,
+    "expectedParts": ["shell", "batter_head", "resonant_head", "hoops", "snare_wires"]
+  },
+  {
+    "id": "drum_kit",
+    "name": "Acoustic Drum Kit",
+    "family": "percussion",
+    "keywords": ["drum kit", "drum set", "drums acoustic"],
+    "minVertexCount": 3000,
+    "maxVertexCount": 450000,
+    "expectedParts": ["kick", "snare", "toms", "hi_hat", "crash", "ride"]
+  },
+  {
+    "id": "djembe",
+    "name": "West African Djembe",
+    "family": "percussion",
+    "keywords": ["djembe", "african djembe drum", "bongo drum"],
+    "minVertexCount": 1000,
+    "maxVertexCount": 200000,
+    "expectedParts": ["shell", "membrane", "tension_ropes", "crown_ring"]
+  },
+  {
+    "id": "trumpet",
+    "name": "Bb Trumpet",
+    "family": "brass",
+    "keywords": ["trumpet", "brass trumpet", "cornet"],
+    "minVertexCount": 1500,
+    "maxVertexCount": 250000,
+    "expectedParts": ["mouthpiece", "valves", "leadpipe", "tuning_slide", "bell"]
+  },
+  {
+    "id": "trombone",
+    "name": "Tenor Trombone",
+    "family": "brass",
+    "keywords": ["trombone", "tenor trombone", "slide trombone"],
+    "minVertexCount": 1500,
+    "maxVertexCount": 250000,
+    "expectedParts": ["mouthpiece", "slide_outer", "slide_inner", "bell_section", "tuning_slide"]
+  },
+  {
+    "id": "alto_saxophone",
+    "name": "Alto Saxophone",
+    "family": "woodwinds",
+    "keywords": ["saxophone", "alto saxophone", "sax brass"],
+    "minVertexCount": 2000,
+    "maxVertexCount": 350000,
+    "expectedParts": ["mouthpiece", "neck", "body", "key_clusters", "bell"]
+  },
+  {
+    "id": "flute",
+    "name": "Concert Flute",
+    "family": "woodwinds",
+    "keywords": ["flute", "concert flute", "silver flute"],
+    "minVertexCount": 1200,
+    "maxVertexCount": 200000,
+    "expectedParts": ["headjoint", "body", "keywork", "footjoint"]
+  },
+  {
+    "id": "synthesizer",
+    "name": "Analog Synthesizer",
+    "family": "electronic",
+    "keywords": ["synthesizer", "moog synthesizer", "analog synth keyboard"],
+    "minVertexCount": 1500,
+    "maxVertexCount": 300000,
+    "expectedParts": ["keys", "oscillator_section", "filter_section", "amp_section", "knobs", "display"]
+  },
+  {
+    "id": "kora",
+    "name": "West African Kora",
+    "family": "world",
+    "keywords": ["kora instrument", "african kora", "kora harp"],
+    "minVertexCount": 1200,
+    "maxVertexCount": 250000,
+    "expectedParts": ["calabash", "skin_table", "neck_stick", "bridge", "handposts", "strings"]
+  },
+  {
+    "id": "kalimba",
+    "name": "Kalimba (Thumb Piano)",
+    "family": "world",
+    "keywords": ["kalimba", "thumb piano", "mbira"],
+    "minVertexCount": 800,
+    "maxVertexCount": 180000,
+    "expectedParts": ["soundbox", "soundhole", "bridge_rod", "retaining_bar", "tines"]
+  }
+]

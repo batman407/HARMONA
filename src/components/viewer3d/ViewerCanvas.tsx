@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, ContactShadows } from '@react-three/drei';
+import { OrbitControls, ContactShadows, Environment } from '@react-three/drei';
 import * as THREE from 'three';
 import { InstrumentModel } from './InstrumentModel';
 import { useViewerStore } from '../../store/useViewerStore';
@@ -25,7 +25,7 @@ const ControlsController: React.FC = () => {
   useEffect(() => {
     if (controlsRef.current) {
       controlsRef.current.autoRotate = autoRotate;
-      controlsRef.current.autoRotateSpeed = 1.2;
+      controlsRef.current.autoRotateSpeed = 1.0;
     }
   }, [autoRotate]);
 
@@ -33,9 +33,10 @@ const ControlsController: React.FC = () => {
     <OrbitControls
       ref={controlsRef}
       enableDamping
-      maxPolarAngle={Math.PI / 2 + 0.1}
-      minDistance={1.8}
-      maxDistance={8.5}
+      dampingFactor={0.05}
+      maxPolarAngle={Math.PI / 2 + 0.15}
+      minDistance={1.4}
+      maxDistance={7.5}
       makeDefault
     />
   );
@@ -43,38 +44,70 @@ const ControlsController: React.FC = () => {
 
 export const ViewerCanvas: React.FC<ViewerCanvasProps> = ({ instrument }) => {
   return (
-    <div className="relative w-full h-full">
+    <div className="relative w-full h-full select-none">
       <Canvas
-        camera={{ position: [2.6, 1.8, 3.2], fov: 42 }}
-        gl={{ antialias: true, alpha: true, toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 1.15 }}
+        camera={{ position: [2.8, 1.6, 3.4], fov: 40 }}
+        dpr={[1, 2]}
+        gl={{
+          antialias: true,
+          alpha: true,
+          powerPreference: 'high-performance',
+          toneMapping: THREE.ACESFilmicToneMapping,
+          toneMappingExposure: 1.15,
+        }}
+        onCreated={({ gl }) => {
+          gl.outputColorSpace = THREE.SRGBColorSpace;
+        }}
       >
         <color attach="background" args={['transparent']} />
 
-        {/* Studio Lighting */}
-        <ambientLight intensity={0.7} />
-        <directionalLight
-          position={[5, 8, 5]}
-          intensity={1.8}
-          castShadow
-          shadow-mapSize-width={1024}
-          shadow-mapSize-height={1024}
-        />
-        <directionalLight position={[-4, 3, -3]} intensity={0.8} color="#94B5E8" />
-        <pointLight position={[0, -2, 2]} intensity={0.5} color="#F2C14E" />
+        {/* Photoreal Studio HDRI Environment Reflection */}
+        <React.Suspense fallback={null}>
+          <Environment preset="studio" environmentIntensity={1.2} />
+        </React.Suspense>
 
-        {/* 3D Model */}
+        {/* 3-Point Studio Product Photography Lighting */}
+        <ambientLight intensity={0.5} />
+        {/* Key Light (Warm Key) */}
+        <directionalLight
+          position={[4.5, 7.5, 5]}
+          intensity={2.2}
+          color="#FFFDF7"
+          castShadow
+          shadow-mapSize-width={2048}
+          shadow-mapSize-height={2048}
+          shadow-bias={-0.0001}
+        />
+        {/* Fill Light (Soft Cool Fill) */}
+        <directionalLight
+          position={[-5, 3.5, -2]}
+          intensity={0.9}
+          color="#B8D0F5"
+        />
+        {/* Rim Light (Gold Accent Hotspot) */}
+        <spotLight
+          position={[0, 6, -5]}
+          angle={0.6}
+          penumbra={0.8}
+          intensity={2.0}
+          color="#F2C14E"
+        />
+        {/* Bottom bounce light */}
+        <pointLight position={[0, -2.5, 1]} intensity={0.4} color="#E8BE65" />
+
+        {/* Realistic Instrument 3D Model */}
         <InstrumentModel instrument={instrument} />
 
         {/* Floating Part Label Annotation */}
         <FloatingPartLabel instrument={instrument} />
 
-        {/* Soft Contact Shadow Catcher */}
+        {/* Realistic Soft Contact Shadow Catcher */}
         <ContactShadows
-          position={[0, -1.2, 0]}
-          opacity={0.65}
-          scale={7}
-          blur={2.5}
-          far={3.5}
+          position={[0, -1.25, 0]}
+          opacity={0.7}
+          scale={8}
+          blur={2.2}
+          far={3.8}
         />
 
         <ControlsController />

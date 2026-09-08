@@ -5,13 +5,13 @@ import { useViewerStore } from '../../store/useViewerStore';
 import {
   Layers,
   Eye,
-  EyeOff,
   RotateCcw,
   Sparkles,
   Maximize2,
   Box,
-  Cpu,
   Info,
+  AlertCircle,
+  Clock,
 } from 'lucide-react';
 import gsap from 'gsap';
 
@@ -31,10 +31,15 @@ export const DisassembleMode: React.FC<DisassembleModeProps> = ({ instrument }) 
   const setIsolatedPartKey = useViewerStore((s) => s.setIsolatedPartKey);
   const resetDisassembly = useViewerStore((s) => s.resetDisassembly);
 
+  const capability = instrument.modelCapability;
+  const supportsDisassemble = capability?.supportsDisassemble ?? true;
+  const hasModel = capability?.hasModel ?? false;
+
   const selectedPart = selectedPartKey ? instrument.parts[selectedPartKey] : null;
 
   // Animate explosion with GSAP
   const handleQuickExplode = (target: number) => {
+    if (!supportsDisassemble) return;
     const obj = { val: explodeProgress };
     gsap.to(obj, {
       val: target,
@@ -45,7 +50,7 @@ export const DisassembleMode: React.FC<DisassembleModeProps> = ({ instrument }) 
   };
 
   const handleToggleIsolate = () => {
-    if (!selectedPartKey) return;
+    if (!selectedPartKey || !supportsDisassemble) return;
     if (isolatedPartKey === selectedPartKey) {
       setIsolatedPartKey(null);
     } else {
@@ -55,8 +60,33 @@ export const DisassembleMode: React.FC<DisassembleModeProps> = ({ instrument }) 
 
   return (
     <div className="flex flex-col gap-4 text-left select-none">
+      {/* Capability Notification Banner if Disassemble is not supported */}
+      {!hasModel ? (
+        <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-start gap-2.5 text-xs text-amber-300">
+          <Clock className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+          <div className="space-y-1">
+            <span className="font-semibold block">Photoreal 3D Model in Production</span>
+            <p className="text-[11px] text-amber-300/80 leading-relaxed">
+              Disassembly controls are disabled until the high-fidelity GLB asset is installed via <code className="px-1 py-0.5 bg-black/40 rounded">npm run fetch:models</code>.
+            </p>
+          </div>
+        </div>
+      ) : !supportsDisassemble ? (
+        <div className="p-3.5 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-start gap-2.5 text-xs text-blue-300">
+          <AlertCircle className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
+          <div className="space-y-1">
+            <span className="font-semibold block">Anatomy model not available yet</span>
+            <p className="text-[11px] text-blue-300/80 leading-relaxed">
+              This photoreal model is currently a unified single-mesh sculpt. Interactive anatomical explosion requires a segmented multi-part CAD model.
+            </p>
+          </div>
+        </div>
+      ) : null}
+
       {/* Disassemble Control Hub */}
-      <div className="p-4 rounded-xl bg-[var(--surface2)]/80 border border-[var(--border)] space-y-4">
+      <div className={`p-4 rounded-xl bg-[var(--surface2)]/80 border border-[var(--border)] space-y-4 ${
+        !supportsDisassemble ? 'opacity-50 pointer-events-none' : ''
+      }`}>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Layers className="w-4 h-4 text-[var(--accent)]" />
@@ -76,9 +106,10 @@ export const DisassembleMode: React.FC<DisassembleModeProps> = ({ instrument }) 
             min="0"
             max="1"
             step="0.01"
+            disabled={!supportsDisassemble}
             value={explodeProgress}
             onChange={(e) => setExplodeProgress(parseFloat(e.target.value))}
-            className="w-full h-2 bg-white/10 rounded-lg cursor-pointer appearance-none accent-[var(--accent)]"
+            className="w-full h-2 bg-white/10 rounded-lg cursor-pointer appearance-none accent-[var(--accent)] disabled:cursor-not-allowed"
           />
           <div className="flex justify-between text-[10px] text-[var(--muted)] font-mono">
             <span>Assembled</span>
@@ -89,8 +120,9 @@ export const DisassembleMode: React.FC<DisassembleModeProps> = ({ instrument }) 
         {/* Quick Explode Presets & Tools */}
         <div className="grid grid-cols-2 gap-2">
           <button
+            disabled={!supportsDisassemble}
             onClick={() => handleQuickExplode(explodeProgress > 0.5 ? 0 : 1)}
-            className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-[var(--surface)] hover:bg-white/10 border border-[var(--border)] text-xs text-[var(--text)] transition-colors"
+            className="flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-[var(--surface)] hover:bg-white/10 border border-[var(--border)] text-xs text-[var(--text)] transition-colors disabled:opacity-40"
           >
             <Sparkles className="w-3.5 h-3.5 text-[var(--accent)]" />
             <span>{explodeProgress > 0.5 ? 'Snap Assemble' : 'Max Explode'}</span>
@@ -112,10 +144,10 @@ export const DisassembleMode: React.FC<DisassembleModeProps> = ({ instrument }) 
         {/* Isolate & Reassemble Row */}
         <div className="flex items-center gap-2 pt-1 border-t border-[var(--border)]">
           <button
-            disabled={!selectedPartKey}
+            disabled={!selectedPartKey || !supportsDisassemble}
             onClick={handleToggleIsolate}
             className={`flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg border text-xs transition-all ${
-              !selectedPartKey
+              !selectedPartKey || !supportsDisassemble
                 ? 'opacity-40 cursor-not-allowed border-[var(--border)]'
                 : isolatedPartKey === selectedPartKey
                 ? 'bg-[var(--accent)] text-[#070A0F] font-semibold border-[var(--accent)]'

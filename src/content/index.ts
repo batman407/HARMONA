@@ -17,8 +17,9 @@ import koraEn from './en/kora.json';
 import kalimbaEn from './en/kalimba.json';
 
 import { InstrumentData, ComingSoonInstrument } from './types';
+import { getModelCapability } from './capabilities';
 
-export const INSTRUMENTS_CATALOG: InstrumentData[] = [
+const rawCatalog: InstrumentData[] = [
   // Strings
   guitarEn as unknown as InstrumentData,
   electricGuitarEn as unknown as InstrumentData,
@@ -45,6 +46,12 @@ export const INSTRUMENTS_CATALOG: InstrumentData[] = [
   kalimbaEn as unknown as InstrumentData,
 ];
 
+// Enrich each instrument with its dynamic model capability
+export const INSTRUMENTS_CATALOG: InstrumentData[] = rawCatalog.map((inst) => ({
+  ...inst,
+  modelCapability: getModelCapability(inst.id, Object.keys(inst.parts || {}).length),
+}));
+
 export const INSTRUMENT_FAMILIES = [
   { id: 'all', label: 'All Instruments', icon: 'Sparkles' },
   { id: 'strings', label: 'Chordophones (Strings)', icon: 'Music' },
@@ -64,6 +71,7 @@ export const COMING_SOON_CATALOG: ComingSoonInstrument[] = [
     familyName: 'Sympathetic Plucked Chordophone',
     shortDescription: '20-string classical Indian lute with curved movable frets and vibrating jawari bridge.',
     comingSoon: true,
+    reason: '3D Anatomy Model in Production',
   },
   {
     id: 'theremin',
@@ -72,6 +80,7 @@ export const COMING_SOON_CATALOG: ComingSoonInstrument[] = [
     familyName: 'Heterodyne Radiophonic Aerophone',
     shortDescription: 'Dual-antenna contactless instrument played through human capacitive coupling.',
     comingSoon: true,
+    reason: '3D Anatomy Model in Production',
   },
   {
     id: 'cello',
@@ -80,6 +89,7 @@ export const COMING_SOON_CATALOG: ComingSoonInstrument[] = [
     familyName: 'Bowed Tenor Chordophone',
     shortDescription: 'Deep resonance chamber producing warm, sonorous low-register harmonics.',
     comingSoon: true,
+    reason: '3D Anatomy Model in Production',
   },
   {
     id: 'didgeridoo',
@@ -88,6 +98,7 @@ export const COMING_SOON_CATALOG: ComingSoonInstrument[] = [
     familyName: 'Natural Drone Aerophone',
     shortDescription: 'Termite-hollowed eucalyptus drone producing continuous circular breathing harmonics.',
     comingSoon: true,
+    reason: '3D Anatomy Model in Production',
   },
   {
     id: 'timpani',
@@ -96,6 +107,7 @@ export const COMING_SOON_CATALOG: ComingSoonInstrument[] = [
     familyName: 'Tunable Copper Kettle Drum',
     shortDescription: 'Pedal-tuned parabolic copper kettle with defined harmonic pitch resonance.',
     comingSoon: true,
+    reason: '3D Anatomy Model in Production',
   },
   {
     id: 'accordion',
@@ -104,7 +116,8 @@ export const COMING_SOON_CATALOG: ComingSoonInstrument[] = [
     familyName: 'Free-Reed Aerophone',
     shortDescription: 'Bellows-driven hand-pumped reed bank with bass chord buttons and treble keyboard.',
     comingSoon: true,
-  }
+    reason: '3D Anatomy Model in Production',
+  },
 ];
 
 export const getInstrumentById = (id: string): InstrumentData => {

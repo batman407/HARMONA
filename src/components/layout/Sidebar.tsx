@@ -202,14 +202,30 @@ export const Sidebar: React.FC = () => {
                   {inst.shortDescription}
                 </p>
 
-                {/* Characteristics Badges */}
-                <div className="flex items-center gap-1.5 mt-2.5 pt-2 border-t border-[var(--border)]">
+                {/* Characteristics & 3D Model Badges */}
+                <div className="flex flex-wrap items-center gap-1.5 mt-2.5 pt-2 border-t border-[var(--border)]">
+                  {inst.modelCapability?.hasModel ? (
+                    <span className="text-[9px] px-1.5 py-0.5 rounded bg-[var(--accentSoft)] text-[var(--accent)] border border-[var(--accentBorder)] font-medium flex items-center gap-1">
+                      <Sparkles className="w-2.5 h-2.5" />
+                      Photoreal 3D
+                    </span>
+                  ) : (
+                    <span className="text-[9px] px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-400/90 border border-amber-500/20 font-medium">
+                      Sound Lab Only
+                    </span>
+                  )}
                   <span className="text-[9px] px-1.5 py-0.5 rounded bg-white/5 text-[var(--muted)] border border-[var(--border)] font-mono">
                     {inst.characteristics.pitchRange.split('(')[0].trim()}
                   </span>
-                  <span className="text-[9px] px-1.5 py-0.5 rounded bg-[var(--accentSoft)] text-[var(--accent)] border border-[var(--accentBorder)] font-medium">
-                    {Object.keys(inst.parts).length} Parts
-                  </span>
+                  {inst.modelCapability?.supportsDisassemble ? (
+                    <span className="text-[9px] px-1.5 py-0.5 rounded bg-white/5 text-[var(--muted)] border border-[var(--border)]">
+                      {Object.keys(inst.parts).length} Parts
+                    </span>
+                  ) : (
+                    <span className="text-[9px] px-1.5 py-0.5 rounded bg-white/5 text-[var(--muted)]/70 border border-[var(--border)]">
+                      Single Mesh
+                    </span>
+                  )}
                   <span className="text-[9px] px-1.5 py-0.5 rounded bg-white/5 text-[var(--muted)] uppercase tracking-wider ml-auto">
                     {inst.family}
                   </span>
